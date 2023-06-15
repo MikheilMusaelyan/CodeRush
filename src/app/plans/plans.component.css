@@ -46,8 +46,36 @@ main{
     /* background-color: #fbffe5; */
     width: max-content;
 }
+.course-price{
+    color: #3d3d3d;
+    text-align: center;
+    margin: 10px 0;
+}
+.linethrough{
+    padding-right: 10px;
+    text-decoration: line-through;
+}
+.interact-wrap{
+    display: flex;
+    justify-content: center;
+    padding: 15px 0 23px 0;
+}
+.interact{
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    display: block;
+    width: 200px;
+    padding: 8px 0;
+    border-radius: 4px;
+    border: none !important;
+    outline: none !important;
+    background: linear-gradient(to right, var(--blue), var(--pink)); ;
+}
+
 .title{
-    margin: 0 0 15px -10px;
+    margin: 0 0 6px -10px;
     display: flex;
     align-items: center;
     justify-content: center;

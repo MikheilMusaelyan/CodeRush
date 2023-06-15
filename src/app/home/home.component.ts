@@ -35,13 +35,25 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
         opacity: 1
       })),
       transition('initial <=> final', animate('900ms cubic-bezier(1, 0.29, 0, 0.78)'))
+    ]),
+    trigger('mainAnim', [
+      state('initial', style({
+        transform: 'translateZ(0)',
+        opacity: 1
+      })),
+      state('final', style({
+        transform: 'translateZ(100px)',
+        opacity: 1
+      })),
+      transition('initial <=> final', animate('450ms cubic-bezier(1, 0.29, 0, 0.78)'))
     ])
   ]
 })
 export class HomeComponent implements OnInit, AfterViewInit{
   firstWord: string = 'initial';
   secondWord: string = 'initial';
-  thirdWord: string = 'initial';
+  animWrap: string = 'initial';
+  animEnded: boolean = false;
   @ViewChild('second', {static: false}) second: any;
 
   ngOnInit(): void {}
@@ -65,11 +77,17 @@ export class HomeComponent implements OnInit, AfterViewInit{
             currentIndex++;
             if (currentIndex >= string.length) {
               clearInterval(interval);
+              setTimeout(() => {
+                this.animWrap = 'final'
+                setTimeout(() => {
+                  this.animEnded = true
+                }, 350);
+              }, 250);
             }
           }, 65);
         }, 800);
       
-      }, 1200);
+      }, 1400);
     }, 0);
   }
 }

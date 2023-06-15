@@ -1,5 +1,5 @@
 <main>
-    <div class="animation-wrap" [@mainAnim]>
+    <div class="animation-wrap" [@mainAnim]="animWrap" *ngIf="!animEnded">
         <h1 class="first anim-word" #first [@first]="firstWord">Want To Learn How To Code?</h1>
         <h1 class="second anim-word" #second [@second]="secondWord">
             Good Choice.

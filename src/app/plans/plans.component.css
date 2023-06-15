@@ -1,0 +1,8 @@
+.learning-details{
+    padding-left: 10px;
+}
+.detail-span{
+    display: inline-block;
+    position: relative;
+    left: -10px;
+}

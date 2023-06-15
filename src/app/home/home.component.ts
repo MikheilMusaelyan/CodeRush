@@ -45,7 +45,7 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
         transform: 'translateZ(100px)',
         opacity: 1
       })),
-      transition('initial <=> final', animate('450ms cubic-bezier(1, 0.29, 0, 0.78)'))
+      transition('initial <=> final', animate('450ms cubic-bezier(1, 0.29, 0, 0.58)'))
     ])
   ]
 })
@@ -59,6 +59,10 @@ export class HomeComponent implements OnInit, AfterViewInit{
   ngOnInit(): void {}
 
   ngAfterViewInit(): void {
+    this.startUpAnim()
+  }
+
+  startUpAnim() {
     const string = ', We All Start Somewhere';
     const indexToAddOn = 12;
     let currentIndex = 0;
@@ -84,10 +88,10 @@ export class HomeComponent implements OnInit, AfterViewInit{
                 }, 350);
               }, 250);
             }
-          }, 65);
+          }, 60);
         }, 800);
       
-      }, 1400);
+      }, 1100);
     }, 0);
   }
 }

@@ -1,8 +1,18 @@
 <main>
-    <div class="animation-wrap" [@mainAnim]="animWrap" *ngIf="!animEnded">
+    <section class="animation-wrap" [@mainAnim]="animWrap" *ngIf="!animEnded">
         <h1 class="first anim-word" #first [@first]="firstWord">Want To Learn How To Code?</h1>
         <h1 class="second anim-word" #second [@second]="secondWord">
             Good Choice.
         </h1>
-    </div>
+    </section>
+    <section class="hero">
+        <h1>Gain an unfair advantage</h1>
+        <!-- <h1>Having a mentor has never been this affordable</h1> -->
+
+        <span class="fact">
+            According to ZipRecruiter, an average web developer in the US makes 
+            <b class="boldtext">$87,739 /year</b>
+            Full Stack Developer - 104,803 /
+        </span>
+    </section>
 </main>

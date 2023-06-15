@@ -1,8 +1,129 @@
-.learning-details{
-    padding-left: 10px;
+main{
+    margin: 40px;
+}
+.main-title, .sub-title{
+    width: 100%;
+    text-align: center;
+}
+.main-title{
+    margin: 0 0 10px 0;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    background: linear-gradient(to top, var(--pink), var(--orange));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+}
+.main-title::before{
+    position: absolute;
+    content: "";
+    bottom: 0;
+    width: 84px;
+    height: 3px;
+    background: linear-gradient(to top, var(--pink), var(--orange));
+}
+.sub-title{
+    font-size: 22px;
+    margin: 0 0 40px 0;
+    background: linear-gradient(to top, var(--pink), var(--orange)); 
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.plan-wrap{
+    display: flex;
+    justify-content: center;
+}
+.plan{
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    /* border: 4px solid #fff0e5; */
+    box-shadow: 0 0px 10px rgb(226, 225, 225);
+    padding: 15px;
+    margin: 10px;
+    /* background-color: #fbffe5; */
+    width: max-content;
+}
+.title{
+    margin: 0 0 15px -10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom, var(--blue), var(--pink)); 
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 30px;
+    font-weight: bold;
+}
+.week-count{
+    font-size: 21px;
+    display: block;
+    padding-left: 7px;
+    color: #3d3d3d;
+}
+.time-stamp{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    font-size: 19px;
+    padding: 10px;
+    font-weight: 400;
+    transition: 300ms;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.time-stamp:hover{
+    background-color: rgb(244, 244, 244);
+}
+.dropdown{
+    padding: 10px 0 0 35px;
+    transition: 400ms ease-out;
+}
+
+.detail-li{
+    color: rgb(90, 89, 89);
+    list-style: none;
+    max-width: 500px;
 }
 .detail-span{
-    display: inline-block;
     position: relative;
-    left: -10px;
+    background: linear-gradient(to top, black, rgb(135, 134, 134)); 
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 17px;
+}
+.title-wrap{
+    display: flex;
+}
+.show-week{
+    color: rgb(90, 89, 89);
+    padding-left: 7px;
+    padding-bottom: 3px;
+    font-size: 17px;
+    text-underline-offset: 2px;
+}
+
+/* .time-stamp::before{
+    content: "";
+    left: 0;
+    width: 5.4px;
+    height: 5px;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-100%);
+} */
+.weeks{
+    display: none;
+    font-weight: normal;
+    
+}
+.tickIcon{
+    color: rgb(55, 234, 24);
+    padding-right: 12px;
 }

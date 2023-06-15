@@ -1,5 +1,5 @@
 main{
-    margin: 40px;
+    padding: 40px;
 }
 .main-title, .sub-title{
     width: 100%;
@@ -26,16 +26,21 @@ main{
 .sub-title{
     font-size: 22px;
     margin: 0 0 40px 0;
+    
+}
+.sub-title span{
     background: linear-gradient(to top, var(--pink), var(--orange)); 
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-}
+}   
 .plan-wrap{
     display: flex;
     justify-content: center;
 }
 .plan{
+    min-width: 200px;
+    position: relative;
     display: flex;
     flex-direction: column;
     border-radius: 5px;
@@ -75,7 +80,7 @@ main{
 }
 
 .title{
-    margin: 0 0 6px -10px;
+    margin: 15px 0 6px -10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -124,6 +129,10 @@ main{
     -webkit-text-fill-color: transparent;
     font-size: 17px;
 }
+.detail-span::before{
+    content: "- ";
+
+}
 .title-wrap{
     display: flex;
 }
@@ -135,17 +144,6 @@ main{
     text-underline-offset: 2px;
 }
 
-/* .time-stamp::before{
-    content: "";
-    left: 0;
-    width: 5.4px;
-    height: 5px;
-    background-color: black;
-    border-radius: 50%;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-100%);
-} */
 .weeks{
     display: none;
     font-weight: normal;
@@ -154,4 +152,114 @@ main{
 .tickIcon{
     color: rgb(55, 234, 24);
     padding-right: 12px;
+}
+
+.fact-wrap{
+    display: flex;
+    justify-content: center;
+    padding: 0 0 45px 0;
+}
+.fact{
+    padding: 0 10px;
+}
+.fact fa-icon{
+    color: var(--orange);
+}
+.fact-span{
+    font-size: 17px;
+    padding-left: 6px;
+    color: #3d3d3d;
+    display: inline-block;
+}
+.sale{
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    background-color: rgb(255, 53, 53);
+    color:white;
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 5px 0 10px 0;
+}
+
+@media screen and (max-width: 1200px){
+    .title{
+        margin-top: 30px;
+    }
+    .title-wrap{
+        display: block;
+    }
+    .show-week{
+        padding-left: 28px;
+        display: block;
+    }
+}
+@media screen and (max-width: 960px){
+    .plan{
+        width: 80%;
+    }
+    .plan-wrap{
+        flex-wrap: wrap;
+    }
+    .title{
+        margin-top: 15px;
+    }
+}
+@media screen and (max-width: 700px){
+    .title{
+        margin-top: 30px;
+    }
+    main{
+        margin: 40px 10px;
+    }
+    .plan{
+        margin: 10px 0;
+    }
+    .time-stamp{
+        padding: 5px;
+    }
+    .sub-title{
+        box-sizing: border-box;
+        padding: 0 10px 0 10px;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .plan{
+        width: 100%;
+    }
+    .title{
+        font-size: 25px;
+        display: flex;
+        justify-content: center;
+    }
+    .title span{
+        text-align: center;
+        display: block;
+    }
+    .course-price{
+        font-size: 22px;
+    }
+    .title-wrap{
+        font-size: 17px;
+    }
+    .detail-span{
+        font-size: 15px;
+    }
+    .detail-li{
+        margin-bottom: 5px;
+    }
+    .dropdown{
+        padding: 5px 0 0 30px;
+    }
+}
+@media screen and (max-width: 400px){
+    .plan{
+        width: 100%;
+    }
+    .title span{
+        width: 80%;
+
+    }
 }

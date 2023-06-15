@@ -1,17 +1,53 @@
 <main>
-    <section class="animation-wrap" [@mainAnim]="animWrap" *ngIf="!animEnded">
-        <h1 class="first anim-word" #first [@first]="firstWord">Want To Learn How To Code?</h1>
-        <h1 class="second anim-word" #second [@second]="secondWord">
-            Good Choice.
-        </h1>
-    </section>
+    <div class="animation-wrap-wrap" *ngIf="!animEnded">
+        <section class="animation-wrap" [@mainAnim]="animWrap" *ngIf="!animEnded">
+            <h1 class="first anim-word" #first [@first]="firstWord">Want To Learn How To Code?</h1>
+            <h1 class="second anim-word" #second [@second]="secondWord">
+                Good Choice.
+            </h1>
+        </section>
+    </div>
     <section class="hero">
-        <h1>Gain an unfair advantage</h1>
+        <!-- <h1>Gain an unfair advantage</h1>
 
         <span class="fact">
             According to ZipRecruiter, an average web developer in the US makes 
-            <b class="boldtext">$87,739 /year</b>
+            <b class="boldtext"></b>
             Full Stack Developer - 104,803 /
-        </span>
+        </span> -->
+        <div class="hero-image-wrap">
+            <div class="left-text-wrap">
+                
+            </div>
+            <img class="hero-image" src="https://cdn.discordapp.com/attachments/1008571121743962212/1118999524984234155/rustavi_2_a_programmer_sitting_on_a_cliff_in_space_and_coding_w_0ec6ce8a-255d-4a67-93ac-b39e61661650.png" alt="">
+        </div>
+    </section>
+    <section class="facts">
+        <div class="facts-wrap">
+            <div class="fact">
+                <div class="fact-wrap">
+                    <fa-icon [icon]="wallet"></fa-icon>
+                    <h1 class="fact-number">$87,739</h1>
+                    <div class="fact-text">AVG Salary</div>
+                </div>
+                <div class="according-to">ZipRecruiter</div>
+            </div>
+            <div class="fact">
+                <div class="fact-wrap">
+                    <fa-icon [icon]="wallet"></fa-icon>
+                    <h1 class="fact-number">105,000+</h1>
+                    <div class="fact-text">Jobs On a Single Platform</div>
+                </div>
+                <div class="according-to">Ziprecruiter</div>
+            </div>
+            <div class="fact">
+                <div class="fact-wrap">
+                    <fa-icon [icon]="wallet"></fa-icon>
+                    <h1 class="fact-number">30.3%</h1>
+                    <div class="fact-text">Est. Job Growth between 2021 - 2031</div>
+                </div>
+                <div class="according-to">The Bureau of Labor Statistics</div>
+            </div>
+        </div>
     </section>
 </main>

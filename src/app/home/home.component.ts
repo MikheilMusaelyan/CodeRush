@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
+import { faWallet, faMoneyBill } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-home',
@@ -22,7 +23,7 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
       transition('initial => final', animate('700ms cubic-bezier(0.6, 0.18, 0, 0.98)')),
       transition('final-left <=> final', [
         style({ opacity: '0.5' }),
-        animate('150ms cubic-bezier(1, 0.29, 0, 0.18)')
+        animate('250ms cubic-bezier(1, 0.29, 0, 0.18)')
       ])
     ]),
     trigger('second', [
@@ -50,16 +51,17 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
   ]
 })
 export class HomeComponent implements OnInit, AfterViewInit{
-  firstWord: string = 'initial';
-  secondWord: string = 'initial';
-  animWrap: string = 'initial';
-  animEnded: boolean = false;
+  firstWord: string = 'final';
+  secondWord: string = 'final';
+  animWrap: string = 'final';
+  animEnded: boolean = true;
+  wallet = faWallet
   @ViewChild('second', {static: false}) second: any;
 
   ngOnInit(): void {}
 
   ngAfterViewInit(): void {
-    this.startUpAnim()
+    // this.startUpAnim()
   }
 
   startUpAnim() {

@@ -1,9 +1,11 @@
 main{
+    
+}
+.animation-wrap-wrap{
     height: 100svh;
     max-height: 100svh !important;
     perspective: 100px;
     transform-style: preserve-3d;
-    background-color: yellow;
     overflow: hidden;
 }
 .animation-wrap{
@@ -15,7 +17,8 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rebeccapurple;
+    background-color: black;
+    color: white;
 }
 .anim-word{
     font-size: 60px;
@@ -23,4 +26,79 @@ main{
 }
 .second{
     z-index: 10;
+}
+.hero{
+    
+}
+.hero-image-wrap{
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: 70vh;
+    background: linear-gradient(to bottom, #013263, #021e3a);
+}
+.hero-image{
+    /* position: absolute; */
+    /* object-fit: cover; */
+    /* height: 130vh; */
+    /* width: 100%; */
+    filter: blur(4px);
+    transition: 700ms;
+}
+.hero-image-wrap::before{
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    z-index: 10;
+}
+
+.facts{
+    height: 300px;
+    background: black;
+}
+.facts-wrap{
+    transform: translateX(150px);
+    display: flex;
+}
+.fact{
+    margin: 0 15px;
+    width: 280px;
+    background: white;
+    box-shadow: 0.0625rem 0.0625rem 0.5rem rgba(91, 91, 91, 0.3);
+    padding: 30px 20px 40px 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.fact-wrap{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.fact-wrap fa-icon{
+    font-size: 34px;
+}
+.fact-number,.fact-text{
+    text-align: center;
+}
+.fact-number{
+    font-size: 42px;
+    font-weight: bold;
+    margin: 12px 0 11px 0;
+}
+.fact-text{
+    font-size: 23px;
+    padding-bottom: 15px;
+}
+.according-to{
+    text-decoration: underline #646464;
+    font-size: 13px;
+    text-underline-offset: 4px;
 }

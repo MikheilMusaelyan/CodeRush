@@ -46,15 +46,15 @@ import { faWallet, faRocket, faPeopleGroup, faCheckDouble, faCertificate, faChec
         transform: 'translateZ(100px)',
         opacity: 1
       })),
-      transition('initial <=> final', animate('450ms cubic-bezier(1, 0.29, 0, 0.58)'))
+      transition('initial <=> final', animate('450ms cubic-bezier(1, 0.29, 0, 0.98)'))
     ])
   ]
 })
 export class HomeComponent implements OnInit, AfterViewInit{
-  firstWord: string = 'final';
-  secondWord: string = 'final';
-  animWrap: string = 'final';
-  animEnded: boolean = true;
+  firstWord: string = 'initial';
+  secondWord: string = 'initial';
+  animWrap: string = 'initial';
+  animEnded: boolean = false;
   wallet = faWallet;
   growth = faRocket;
   people = faPeopleGroup;
@@ -65,14 +65,14 @@ export class HomeComponent implements OnInit, AfterViewInit{
   ngOnInit(): void {}
 
   ngAfterViewInit(): void {
-    // this.startUpAnim()
+    this.startUpAnim()
     this.scrollAnim()
   }
 
   @ViewChild('banner') banner: any;
 
   startUpAnim() {
-    const string = ', We All Start Somewhere';
+    const string = ', You\'re at The Right Place';
     const indexToAddOn = 12;
     let currentIndex = 0;
 
@@ -100,7 +100,7 @@ export class HomeComponent implements OnInit, AfterViewInit{
           }, 60);
         }, 800);
       
-      }, 1100);
+      }, 1300);
     }, 0);
   }
 

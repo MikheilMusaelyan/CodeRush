@@ -16,20 +16,22 @@ main{
 .what-you-learn-header{
     text-align: center;
     font-size: 65px;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 100px;
+}
+.what-you-learn-header span{
     background: linear-gradient(to top, var(--pink), var(--orange));
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    position: relative;
-    z-index: 2;
-    margin-bottom: 100px;
 }
 .skill-image-main{
     position: relative;
     overflow: hidden;
     min-height: 600px;
     border-radius: 5px;
-    box-shadow: 0 0px 20px rgba(0, 0, 0, 0.52);
+    box-shadow: 0 0px 20px rgba(0, 0, 0, 0.15);
     background-color: white;
     padding: 15px 100px;
 }
@@ -38,24 +40,24 @@ main{
     position: absolute;
 }
 .skill-image-wrap:nth-child(1){
-    left: 30%;
-    top: 18%;
+    left: 40%;
+    top: 10%;
 }
 .skill-image-wrap:nth-child(2){
-    top: 50%;
-    left: 64%;
+    top: 63%;
+    left: 60%;
 }
 .skill-image-wrap:nth-child(3){
-    left: 77%;
-    top: 80%;
+    left: 72%;
+    top: 60%;
 }
 .skill-image-wrap:nth-child(4){
     left: 85%;
-    top: 10%;
+    top: 60%;
 }
 .skill-image-wrap:nth-child(5){
     left: 30%;
-    top: 70%;
+    top: 30%;
 }
 .skill-image-wrap:nth-child(6){
     left: 10%;
@@ -67,36 +69,34 @@ main{
 }
 .skill-image-wrap:nth-child(8){
     left: 10%;
-    top: 35%;
+    top: 15%;
 }
 .skill-image-wrap:nth-child(9){
-    left: 90%;
-    top: 60%;
+    left: 50%;
+    top: 0%;
 }
 .skill-image-wrap:nth-child(10){
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    left: 47%;
+    top: 45%;
 }
 .skill-image-wrap:nth-child(11){
-    left: 50%;
-    top: 85%;
+    display: none;
 }
 .skill-image-wrap:nth-child(12){
-    left: 80%;
-    top: 40%;
+    left: 60%;
+    top: 30%;
 }
 .skill-image-wrap:nth-child(13){
-    left: 25%;
-    top: 40%;
+    left: 20%;
+    top: 0%;
 }
 .skill-image-wrap:nth-child(14){
-    left: 50%;
+    left: 90%;
     top: 10%;
 }
 .skill-image-wrap:nth-child(15){
-    left: 13%;
-    top: 8%;
+    left: 25%;
+    top: 30%;
 }
 
 
@@ -156,11 +156,34 @@ main{
     transition: 500ms;
 }
 
+@media screen and (max-width: 900px){
+    .skill-image-wrap:nth-child(6){
+        left: 2%;
+        /* top: 80%; */
+    }
+    .skill-image-wrap:nth-child(4){
+        left: 73%;
+        /* top: 80%; */
+    }
+    .skill-image-wrap:nth-child(3){
+        left: 30%;
+        top: 15%;
+        /* top: 80%; */
+    }
+    .skill-image-wrap:nth-child(14){
+        top: 0%;
+        left: 80%;
+        /* top: 80%; */
+    }
+}
+
 @media screen and (max-width: 1250px) {
     .line{
         left: 20px;
     }
-    
+    main{
+        padding: 100px 10px 30px 10px;
+    }
 }
 @media screen and (max-width: 1000px) {
     .inline::before{
@@ -171,11 +194,58 @@ main{
     .inline::before{
         width: calc(100vw - 200px);
     }
+    .what-you-learn-header span{
+        display: block;
+    }
+    .line{
+        top: -180px;
+    }
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
     .inline::before{
         width: calc(100vw - 100px);
     }
+    .what-you-learn-header{
+        font-size: 42px;
+    }
+    .what-you-learn-header span{
+        display: inline;
+    }
+    .line{
+        top: -250px;
+    }
+    main{
+        padding: 120px 10px 30px 10px;
+    }
+    .skill-image-wrap:nth-child(8){
+        top: 5%;
+        left: 5%;
+        /* top: 80%; */
+    }
+    .skill-image-wrap:nth-child(15){
+        left: 10%;
+    }
+}
+
+@media screen and (max-width: 470px) {
+    main{
+        padding-top: 60px;
+    }
+    .line{
+        top: -20px;
+        height: 250px;
+    }
+    .what-you-learn-header span{
+        display: block;
+    }
+    .skill-image-wrap:nth-child(4){
+        left: 65%;
+        top: 75%;
+    }
+    .skill-image-wrap:nth-child(6){
+        top: 85%;
+    }
+
 }
 @media screen and (max-width: 415px) {
     .line{

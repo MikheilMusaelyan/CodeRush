@@ -2,11 +2,21 @@
     <div class="line"><div class="inline"></div></div>
 
     <section class="what-you-learn-wrap">
-        <h1 class="what-you-learn-header">What You Will Learn</h1>
+        <h1 class="what-you-learn-header">
+            <span>What You </span> 
+            <span> Will Learn</span>
+        </h1>
 
         <div class="skill-image-main" #skillWrap>
-            <div class="skill-image-wrap" #skill *ngFor="let image of images">
-                <img class="skill-image" [src]="image" alt="No Image">
+            <div class="skill-image-wrap"
+            #skill *ngFor="let i of images; let j = index" 
+            [attr.scrollSpeed]="i.scrollSpeed"
+            [ngStyle]="{
+                'min-width': returnWidth(i.width) + '%',
+                'z-index': i.width,
+            }"
+            >
+                <img class="skill-image" [src]="i.image" alt="No Image">
             </div>
         </div>
         

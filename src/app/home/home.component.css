@@ -6,10 +6,13 @@ main{
 }
 .animation-wrap-wrap{
     height: 100svh;
+    width: 100vw;
     max-height: 100svh !important;
     perspective: 100px;
     transform-style: preserve-3d;
     overflow: hidden;
+    position: absolute;
+    z-index: 100;
 }
 .animation-wrap{
     width: 100%;

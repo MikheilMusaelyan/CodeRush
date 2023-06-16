@@ -1,4 +1,7 @@
-<main>
+<main [ngStyle]="{
+    'max-height': !animEnded ? '100vh' : 'auto',
+    'overflow': !animEnded ? 'hidden' : 'initial'
+}">
     <div class="animation-wrap-wrap" *ngIf="!animEnded">
         <section class="animation-wrap" [@mainAnim]="animWrap" *ngIf="!animEnded">
             <h1 class="first anim-word" #first [@first]="firstWord">Want To Learn How To Code?</h1>

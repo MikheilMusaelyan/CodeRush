@@ -1,5 +1,8 @@
+*{
+    box-sizing: border-box;
+}
 main{
-    
+    position: relative;
 }
 .animation-wrap-wrap{
     height: 100svh;
@@ -28,24 +31,19 @@ main{
     z-index: 10;
 }
 .hero{
-    
+    position: relative;
+    z-index: 5;
 }
 .hero-image-wrap{
-    overflow: hidden;
     position: relative;
-    display: flex;
-    justify-content: center;
-    height: 70vh;
-    background: linear-gradient(to bottom, #013263, #021e3a);
+    background-size: cover;
+    background-position: center -50px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-image: url(https://cdn.discordapp.com/attachments/1008571121743962212/1118999524984234155/rustavi_2_a_programmer_sitting_on_a_cliff_in_space_and_coding_w_0ec6ce8a-255d-4a67-93ac-b39e61661650.png);
+    height: 100svh;   
 }
-.hero-image{
-    /* position: absolute; */
-    /* object-fit: cover; */
-    /* height: 130vh; */
-    /* width: 100%; */
-    filter: blur(4px);
-    transition: 700ms;
-}
+
 .hero-image-wrap::before{
     content: '';
     top: 0;
@@ -58,12 +56,25 @@ main{
 }
 
 .facts{
-    height: 300px;
-    background: black;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 350px;
+    position: relative;
+}
+.facts-down{
+    display: flex;
+    flex-direction: column;
+    width: min-content;
+    transform: translateY(35%);
+    position: relative;
+    z-index: 2;
 }
 .facts-wrap{
-    transform: translateX(150px);
     display: flex;
+    justify-content: center;
+    width: 100%;
 }
 .fact{
     margin: 0 15px;
@@ -84,6 +95,7 @@ main{
 }
 .fact-wrap fa-icon{
     font-size: 34px;
+   
 }
 .fact-number,.fact-text{
     text-align: center;
@@ -101,4 +113,28 @@ main{
     text-decoration: underline #646464;
     font-size: 13px;
     text-underline-offset: 4px;
+}
+.facts-header{
+    color: white;
+    font-size: 65px;
+    padding-bottom: 40px;
+}
+.mainline{
+    height: 100%;
+    position: absolute;
+    top: 100vh;
+    left: 100px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--blue), var(--pink), var(--orange));
+    z-index: 2;
+}
+.facts-mainline{
+    height: 3px;
+    width: calc(50% + 340px);
+    position: absolute;
+    bottom: -30px;
+    left: 100px;
+    background: linear-gradient(to right, var(--blue), var(--pink), var(--orange));
+    /* background: linear-gradient(to right, var(--pink), var(--blue), var(--orange)); */
+    z-index: 1;
 }

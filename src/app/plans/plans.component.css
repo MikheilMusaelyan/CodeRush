@@ -224,8 +224,17 @@ main{
         padding: 0 10px 0 10px;
     }
 }
-
+@media screen and (max-width: 600px){
+    main{
+        padding: 0;
+    }
+}
 @media screen and (max-width: 500px){
+    .interact{
+        width: 180px;
+        padding: 7px 0;
+        font-size: 15px;
+    }
     .plan{
         width: 100%;
     }

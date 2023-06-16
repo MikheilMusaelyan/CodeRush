@@ -64,7 +64,10 @@ export class HomeComponent implements OnInit, AfterViewInit{
 
   ngAfterViewInit(): void {
     // this.startUpAnim()
+    this.scrollAnim()
   }
+
+  @ViewChild('banner') banner: any;
 
   startUpAnim() {
     const string = ', We All Start Somewhere';
@@ -97,5 +100,13 @@ export class HomeComponent implements OnInit, AfterViewInit{
       
       }, 1100);
     }, 0);
+  }
+
+  scrollAnim() {
+    let scrollSpeed = 0.5
+    window.addEventListener('scroll', () => {
+      const scrollPos = window.scrollY * scrollSpeed;
+      this.banner.nativeElement.style.transform = `translateY(${scrollPos}px)`;
+    });
   }
 }

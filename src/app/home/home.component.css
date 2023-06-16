@@ -62,11 +62,11 @@ main{
     align-items: center;
     height: 350px;
     position: relative;
+    padding: 20px;
 }
 .facts-down{
     display: flex;
     flex-direction: column;
-    width: min-content;
     transform: translateY(35%);
     position: relative;
     z-index: 2;
@@ -118,6 +118,7 @@ main{
     color: white;
     font-size: 65px;
     padding-bottom: 40px;
+    text-align: center;
 }
 .mainline{
     height: 100%;
@@ -137,4 +138,76 @@ main{
     background: linear-gradient(to right, var(--blue), var(--pink), var(--orange));
     /* background: linear-gradient(to right, var(--pink), var(--blue), var(--orange)); */
     z-index: 1;
+}
+
+@media screen and (max-width: 1250px){
+    .mainline, .facts-mainline{
+        left: 20px;
+    }
+}
+
+@media screen and (max-width: 1000px){
+    .facts-header{
+        font-size: 55px;
+    }
+    .fact{
+        padding: 20px 10px 30px 10px;
+        width: 240px;
+        margin: 0 10px;
+    }
+    .facts-down{
+        transform: translateY(45%);
+    }
+}
+
+@media screen and (max-width: 850px){
+    .facts-wrap{
+        flex-direction: column;
+        align-items: center;
+    }
+    .fact{
+        height: 240px;
+        width: 80%;
+        margin: 8px 0;
+    }
+    .facts-mainline{
+        width: calc(50% - 20px);
+        bottom: -50px;
+        background: linear-gradient(to right, var(--pink), var(--blue), var(--orange));
+    }
+    .facts-down{
+        transform: translateY(410px);
+    }
+}
+
+@media screen and (max-width: 535px){
+    .facts{
+        padding: 15px;
+    }
+    .facts-mainline{
+        bottom: -60px;
+    }
+    .facts-header{
+        font-size: 42px;
+    }
+    .fact-number{
+        font-size: 34px;
+    }
+    .fact-text{
+        font-size: 20px;
+    }
+}
+@media screen and (max-width: 360px){
+    .facts{
+        padding: 0;
+    }
+    .fact{
+        width: 90%;
+    }
+    .mainline, .facts-mainline{
+        left: 7px;
+    }
+    .mainline{
+        width: 3px;
+    }
 }

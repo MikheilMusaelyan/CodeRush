@@ -33,6 +33,7 @@ main{
 .hero{
     position: relative;
     z-index: 5;
+    overflow: hidden;
 }
 .hero-image-wrap{
     position: relative;
@@ -51,40 +52,70 @@ main{
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.7);
     position: absolute;
     z-index: 10;
 }
 
 .text-wrap{
-    width: 40%;
+    width: 50%;
     position: absolute;
     left: 8%;
     top: 20%;
     z-index: 11;
 }
 .hero-header{
-    font-size: 60px;
+    font-size: 62px;
     color: white;
     /* text-align: center; */
 }
 .advantages-wrap-main{
     position: absolute;
     right: 8%;
-    top: 20%;
+    top: 25%;
     width: 30%;
-    height: 30%;
-    border: 2px solid var(--orange) dashed;
+    height: 300px;
     perspective: 240px;
     transform-style: preserve-3d;
     z-index: 11;
 }
 .advantages-wrap{
     transform: rotate3d(.5,-1,0,12deg) rotate(-1deg);
+    
 }
 
-
-
+.left-adv-wrap{
+    width: 35%;
+    height: 320px;
+    border-radius: 7px;
+    background-color:white;
+    position: absolute;
+    left: 8%;
+    top: 24%;
+    z-index: 11;
+    padding: 20px;
+}
+.left-adv-header{
+    padding-bottom: 18px;
+    font-size: 30px;
+}
+.left-adv-span{
+    font-size: 29px;
+    display: inline-block;
+    padding: 0 5px;
+}
+.left-adv-ul{
+    margin: 0;
+    padding: 0;
+}
+.left-adv-li{
+    padding: 8px 0;
+    font-size: 22px;
+    list-style: none;
+}
+.check-icon{
+    color: rgb(55, 234, 24);
+}
 /* facts */
 
 .facts{
@@ -174,8 +205,8 @@ main{
     position: absolute;
     top: 370px;
     left: 100px;
-    background: linear-gradient(to right, var(--blue), var(--pink), rgb(255, 255, 0));
-    /* background: linear-gradient(to right, var(--pink), var(--blue), var(--orange)); */
+    /* background: linear-gradient(to right, var(--blue), var(--pink), rgb(255, 255, 0)); */
+    background: linear-gradient(to right, rgb(230, 51, 87), var(--blue), var(--orange));
     z-index: 1;
 }
 
@@ -195,9 +226,7 @@ main{
         width: 240px;
         margin: 0 10px;
     }
-    .facts-down{
-        /* transform: translateY(45%); */
-    }
+   
 }
 
 @media screen and (max-width: 850px){

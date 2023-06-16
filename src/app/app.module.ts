@@ -7,12 +7,16 @@ import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PlansComponent } from './plans/plans.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { NavbarComponent } from './navbar/navbar.component';
+import { WhatweteachComponent } from './whatweteach/whatweteach.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    PlansComponent
+    PlansComponent,
+    NavbarComponent,
+    WhatweteachComponent
   ],
   imports: [
     BrowserModule,

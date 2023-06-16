@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
-import { faWallet, faRocket, faPeopleGroup } from '@fortawesome/free-solid-svg-icons';
+import { faWallet, faRocket, faPeopleGroup, faCheckDouble, faCertificate, faCheck } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-home',
@@ -57,7 +57,9 @@ export class HomeComponent implements OnInit, AfterViewInit{
   animEnded: boolean = true;
   wallet = faWallet;
   growth = faRocket;
-  people = faPeopleGroup
+  people = faPeopleGroup;
+  certification = faCertificate;
+  check = faCheck
   @ViewChild('second', {static: false}) second: any;
 
   ngOnInit(): void {}

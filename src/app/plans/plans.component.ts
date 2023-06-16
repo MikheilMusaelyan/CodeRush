@@ -12,7 +12,7 @@ export class PlansComponent {
   tick = faCheck
   dropdown = faArrowDown
   time = faClock
-  req = faCheckDouble
-  certificate = faCertificate
+  // req = faCheckDouble
+  // certificate = faCertificate
 
 }

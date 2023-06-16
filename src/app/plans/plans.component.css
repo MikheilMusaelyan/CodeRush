@@ -6,6 +6,7 @@ main{
     text-align: center;
 }
 .main-title{
+    font-size: 60px;
     margin: 0 0 10px 0;
     text-decoration: underline;
     text-underline-offset: 5px;

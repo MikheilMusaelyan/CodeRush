@@ -18,7 +18,7 @@ export class WhatweteachComponent {
     { width: 7, scrollSpeed: 0.24, image: 'https://1.bp.blogspot.com/-MwJI22_Ek_0/XJQEjL9WGjI/AAAAAAAAJSs/Kd9WAGTItDoTRoaIFLE8qwOrj3STIMbfQCK4BGAYYCw/s1600/logo%2Bangular%2Bicon.png' },
     //ngrx 6
     { width: 16, scrollSpeed: -0.3, image: 'https://ngrx.io/assets/images/badge.svg' },
-    { width: 7, scrollSpeed: 0, image: 'https://tse3.mm.bing.net/th?id=OIP.6ZqA9PK6o3MiO9U1mN31LgHaHa&pid=Api&P=0' },
+    { width: 7, scrollSpeed: -0.05, image: 'https://tse3.mm.bing.net/th?id=OIP.6ZqA9PK6o3MiO9U1mN31LgHaHa&pid=Api&P=0' },
     //node 8
     { width: 9, scrollSpeed: 0.1, image: 'https://logos-download.com/wp-content/uploads/2016/09/Node_logo_NodeJS.png' },
     { width: 1, scrollSpeed: 0.3, image: 'https://tse1.mm.bing.net/th?id=OIP.b2Cmei85n1BpF-LRLBmcnwAAAA&pid=Api&P=0' },

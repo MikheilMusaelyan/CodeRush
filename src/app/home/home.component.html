@@ -1,6 +1,5 @@
-<main [ngStyle]="{
-    'max-height': !animEnded ? '100vh' : 'auto',
-    'overflow': !animEnded ? 'hidden' : 'initial'
+<main [ngClass]="{
+    'nooverflow' : !animEnded
 }">
     <div class="animation-wrap-wrap" *ngIf="!animEnded">
         <section class="animation-wrap" [@mainAnim]="animWrap" *ngIf="!animEnded">
@@ -20,21 +19,25 @@
 
         <div class="left-adv-wrap">
             <h1 class="left-adv-header">Change Your Life</h1>
+
             <div class="left-adv-ul">
                 <li class="left-adv-li">
-                    <fa-icon class="check-icon" [icon]="check"></fa-icon>
-                    <span class="left-adv-span">Get Certified</span>
-                    <fa-icon class="hero-icon" [icon]="certification"></fa-icon>
+                    <div class="hero-icon-wrap">
+                        <fa-icon class="hero-icon" [icon]="certification"></fa-icon>
+                    </div>
+                    <span class="left-adv-span">Unfairly Low Price</span>
                 </li>
                 <li class="left-adv-li">
-                    <fa-icon class="check-icon" [icon]="check"></fa-icon>
-                    <span class="left-adv-span">Get Certified</span>
-                    <fa-icon class="hero-icon" [icon]="certification"></fa-icon>
+                    <div class="hero-icon-wrap">
+                        <fa-icon class="hero-icon" [icon]="certification"></fa-icon>
+                    </div>
+                    <span class="left-adv-span">No Requirements</span>
                 </li>
                 <li class="left-adv-li">
-                    <fa-icon class="check-icon" [icon]="check"></fa-icon>
+                    <div class="hero-icon-wrap">
+                        <fa-icon class="hero-icon" [icon]="certification"></fa-icon>
+                    </div>
                     <span class="left-adv-span">Get Certified</span>
-                    <fa-icon class="hero-icon" [icon]="certification"></fa-icon>
                 </li>
             </div>
         </div>
@@ -46,6 +49,7 @@
                 </h1>
             </div>
         </div>
+
     </section>
 
     <section class="facts">

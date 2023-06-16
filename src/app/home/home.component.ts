@@ -51,10 +51,10 @@ import { faWallet, faRocket, faPeopleGroup, faCheckDouble, faCertificate, faChec
   ]
 })
 export class HomeComponent implements OnInit, AfterViewInit{
-  firstWord: string = 'initial';
-  secondWord: string = 'initial';
-  animWrap: string = 'initial';
-  animEnded: boolean = false;
+  firstWord: string = 'final';
+  secondWord: string = 'final';
+  animWrap: string = 'final';
+  animEnded: boolean = true;
   wallet = faWallet;
   growth = faRocket;
   people = faPeopleGroup;
@@ -100,7 +100,7 @@ export class HomeComponent implements OnInit, AfterViewInit{
           }, 60);
         }, 800);
       
-      }, 1300);
+      }, 1200);
     }, 0);
   }
 

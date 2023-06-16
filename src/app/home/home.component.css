@@ -4,6 +4,10 @@
 main{
     position: relative;
 }
+.nooverflow{
+    height: 100vh;
+    overflow: hidden;
+}
 .animation-wrap-wrap{
     height: 100svh;
     width: 100vw;
@@ -29,6 +33,7 @@ main{
 .anim-word{
     font-size: 60px;
     position: absolute;
+    text-align: center;
 }
 .second{
     z-index: 10;
@@ -68,7 +73,7 @@ main{
     z-index: 11;
 }
 .hero-header{
-    font-size: 62px;
+    font-size: 67px;
     color: white;
     /* text-align: center; */
 }
@@ -76,7 +81,7 @@ main{
     position: absolute;
     right: 8%;
     top: 25%;
-    width: 30%;
+    width: 37%;
     height: 300px;
     perspective: 240px;
     transform-style: preserve-3d;
@@ -89,7 +94,6 @@ main{
 
 .left-adv-wrap{
     width: 35%;
-    height: 320px;
     border-radius: 7px;
     background-color:white;
     position: absolute;
@@ -97,28 +101,62 @@ main{
     top: 24%;
     z-index: 11;
     padding: 20px;
+    box-shadow: 0 4px 30px 10px rgb(35, 35, 35);
 }
 .left-adv-header{
-    padding-bottom: 18px;
-    font-size: 30px;
+    padding-bottom: 35px;
+    font-size: 35px;
+    background: linear-gradient(to bottom, var(--blue), var(--pink));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 .left-adv-span{
-    font-size: 29px;
+    font-size: 23px;
+    color: white;
+    font-weight: bold;
     display: inline-block;
+    margin-left: 10px;
     padding: 0 5px;
 }
 .left-adv-ul{
     margin: 0;
     padding: 0;
+    box-shadow: 0 0 10px lightgrey;
+    padding: 10px;
+    border-radius: 5px;
 }
 .left-adv-li{
-    padding: 8px 0;
+    padding: 8px 10px 10px 10px; 
+    border-radius: 50px;
+    margin: 15px 0;
     font-size: 22px;
     list-style: none;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 10px rgb(202, 202, 202);
+    max-width: 320px;
+
 }
-.check-icon{
-    color: rgb(55, 234, 24);
+.left-adv-li:nth-child(1){
+    background-color: var(--blue);
 }
+.left-adv-li:nth-child(2){
+    background-color: var(--pink);
+}
+.left-adv-li:nth-child(3){
+    background-color: var(--orange);
+}
+.hero-icon-wrap{
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* facts */
 
 .facts{
@@ -218,6 +256,20 @@ main{
     .mainline, .facts-mainline{
         left: 20px;
     }
+    .hero-image-wrap{
+        background-position: center;
+    }
+    .advantages-wrap-main{
+        top: 30%;
+        width: 45%;
+        right: 3%;
+    }
+    .hero-header{
+        font-size: 53px;
+    }
+    .left-adv-wrap{
+        top: 30%;
+    }
 }
 
 @media screen and (max-width: 1000px){
@@ -228,6 +280,10 @@ main{
         padding: 20px 10px 30px 10px;
         width: 240px;
         margin: 0 10px;
+    }
+    .left-adv-wrap{
+        left: 3%;
+        width: 43%;
     }
    
 }
@@ -276,6 +332,9 @@ main{
     }
 }
 @media screen and (max-width: 415px){
+    .anim-word{
+        font-size: 45px;
+    }
     .facts-down{
         padding-top: 40px;
     }

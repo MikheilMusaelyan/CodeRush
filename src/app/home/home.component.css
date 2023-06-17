@@ -53,6 +53,10 @@ main{
     height: 100svh;
     transition: 700ms;
 }
+.hero-icon{
+    color: orangered;
+    font-size: 17px;
+}
 
 .hero-image-wrap::before{
     content: '';
@@ -60,7 +64,7 @@ main{
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.6);
     position: absolute;
     z-index: 10;
 }
@@ -74,8 +78,13 @@ main{
 }
 .hero-header{
     font-size: 67px;
-    color: white;
-    /* text-align: center; */
+}
+.hero-header span{
+    background: linear-gradient(to bottom, var(--blue), var(--pink), var(--orange));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: block;
 }
 .advantages-wrap-main{
     position: absolute;
@@ -95,18 +104,20 @@ main{
 .left-adv-wrap{
     width: 35%;
     border-radius: 7px;
-    background-color:white;
     position: absolute;
     left: 8%;
     top: 24%;
     z-index: 11;
     padding: 20px;
-    box-shadow: 0 4px 30px 10px rgb(35, 35, 35);
+    box-shadow: -3px 2px 10px rgb(0, 0, 0);
+    border: 1px solid rgb(148, 146, 146);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px );
 }
 .left-adv-header{
     padding-bottom: 35px;
     font-size: 35px;
-    background: linear-gradient(to bottom, var(--blue), var(--pink));
+    background: linear-gradient(to right, var(--blue), var(--pink), var(--orange));
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -122,8 +133,9 @@ main{
 .left-adv-ul{
     margin: 0;
     padding: 0;
-    box-shadow: 0 0 10px lightgrey;
-    padding: 10px;
+    box-shadow: -3px 2px 10px rgb(0, 0, 0);
+    border: 1px solid rgb(148, 146, 146);
+    padding: 10px 15px;
     border-radius: 5px;
 }
 .left-adv-li{
@@ -134,9 +146,8 @@ main{
     list-style: none;
     display: flex;
     align-items: center;
-    box-shadow: 0 0 10px rgb(202, 202, 202);
-    max-width: 320px;
-
+    min-width: 320px;
+    width: max-content;
 }
 .left-adv-li:nth-child(1){
     background-color: var(--blue);
@@ -232,7 +243,7 @@ main{
     padding-bottom: 40px;
 }
 .mainline{
-    height: 100%;
+    height: calc(100% - 100vh);
     position: absolute;
     top: 100vh;
     left: 100px;
@@ -260,34 +271,42 @@ main{
         background-position: center;
     }
     .advantages-wrap-main{
-        top: 30%;
-        width: 45%;
-        right: 3%;
-    }
-    .hero-header{
-        font-size: 53px;
+        width: 50%;
+        right: 0%;
     }
     .left-adv-wrap{
-        top: 30%;
+        left: 3%;
+        width: 43%;
     }
 }
 
 @media screen and (max-width: 1000px){
-    .facts-header{
+    .left-adv-wrap{
+        width: 50%;
+    }
+    .advantages-wrap-main{
+        right: 5%;
+        width: 35%;
+    }
+    .facts-header, .hero-header{
         font-size: 55px;
+    }
+    .hero-header span{
+        display: inline;
     }
     .fact{
         padding: 20px 10px 30px 10px;
         width: 240px;
         margin: 0 10px;
     }
-    .left-adv-wrap{
-        left: 3%;
-        width: 43%;
+    .left-adv-li{
+        width: 100%;
+        min-width: auto;
     }
-   
+    .left-adv-span{
+        font-size: 17px;
+    }
 }
-
 @media screen and (max-width: 850px){
     .facts-wrap{
         flex-direction: column;
@@ -306,11 +325,64 @@ main{
     }
 
 }
+
+@media screen and (max-width: 780px){
+    .left-adv-wrap{
+        width: 45%;
+        left: 15px;
+        padding: 12px;
+        top: 30%;
+    }
+    .left-adv-ul{
+        padding: 12px;
+    }
+    .left-adv-li{
+        padding: 7px;
+    }
+    .left-adv-header{
+        font-size: 30px;
+    }
+    .advantages-wrap-main{
+        width: 50%;
+        right: 0;
+        top: 34%;
+    }
+    .hero-header{
+        font-size: 45px;
+    }
+    .hero-header span{
+        display: block;
+    }
+}
 @media screen and (max-width: 703px){
     .facts-down{
         padding-top: 30px;
     }
+    .advantages-wrap-main{
+        top: 7%;
+        right: -10%;
+        width: 100%;
+    }
+    .left-adv-header{
+        font-size: 30px;
+    }
+    .left-adv-span{
+        font-size: 20px;
+    }
+    .advantages-wrap{
+        display: flex;
+        justify-content: center;
+    }
+    .left-adv-wrap{
+        width: 80%;
+        top: 40%;
+        z-index: 100;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
 }
+
 @media screen and (max-width: 600px){
     .facts-down{
         padding-top: 100px;
@@ -329,6 +401,18 @@ main{
     }
     .fact-text{
         font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .left-adv-wrap{
+        width: calc(100% - 30px);
+    }
+    .hero-header{
+        font-size: 40px;
+    }
+    .advantages-wrap-main{
+        right: 0;
     }
 }
 @media screen and (max-width: 415px){

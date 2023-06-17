@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { MainserviceService } from './mainservice.service';
 import { animate, state, style, transition, trigger } from '@angular/animations';
+import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faMailBulk, faPhone } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-root',
@@ -20,9 +22,17 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 })
 export class AppComponent {
   title = 'coderush';
+
+  fb = faFacebook
+  insta = faInstagram
+  phone = faPhone
+  email = faMailBulk
+
   contact: boolean = false;
   contactAnim = 'final'
+
   constructor(private service: MainserviceService){}
+
   ngOnInit(){
     this.service.contactSubject.subscribe((bool: boolean) => {
       if(bool){

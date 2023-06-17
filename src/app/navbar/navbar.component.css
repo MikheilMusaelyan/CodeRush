@@ -4,6 +4,13 @@
 nav{
     height: 0;
 }
+.logoend{
+    display: inline-block;
+    background: linear-gradient(to top, var(--blue), var(--pink),  white);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 ul{
     color: white;
     position: fixed;

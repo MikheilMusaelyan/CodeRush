@@ -26,8 +26,6 @@ ul{
     margin: 0;
 }
 li{
-    user-select: none;
-    -webkit-user-select: none;
     padding: 15px;
     font-size: 20px;
     transition: 200ms;

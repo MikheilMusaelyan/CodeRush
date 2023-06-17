@@ -14,7 +14,7 @@ export class WhatweteachComponent {
     { width: 8, scrollSpeed: -0.1, image: 'https://logos-download.com/wp-content/uploads/2019/01/JavaScript_Logo.png'},
     //bootstrap 4
     { width: 17, scrollSpeed: -0.2, image: 'https://www.drupal.org/files/project-images/bootstrap-stack.png' },
-    //angular 
+    //angular
     { width: 7, scrollSpeed: 0.24, image: 'https://1.bp.blogspot.com/-MwJI22_Ek_0/XJQEjL9WGjI/AAAAAAAAJSs/Kd9WAGTItDoTRoaIFLE8qwOrj3STIMbfQCK4BGAYYCw/s1600/logo%2Bangular%2Bicon.png' },
     //ngrx 6
     { width: 16, scrollSpeed: -0.3, image: 'https://ngrx.io/assets/images/badge.svg' },

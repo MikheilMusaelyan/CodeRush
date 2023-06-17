@@ -243,6 +243,10 @@ main{
         left: 70%;
         top: 85%;
     }
+    .skill-image-wrap:nth-child(10){
+        min-width: 120px !important;
+        margin-left: -10px;
+    }
 }
 
 @media screen and (max-width: 470px) {

@@ -9,6 +9,7 @@ import { PlansComponent } from './plans/plans.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NavbarComponent } from './navbar/navbar.component';
 import { WhatweteachComponent } from './whatweteach/whatweteach.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { WhatweteachComponent } from './whatweteach/whatweteach.component';
     HomeComponent,
     PlansComponent,
     NavbarComponent,
-    WhatweteachComponent
+    WhatweteachComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,

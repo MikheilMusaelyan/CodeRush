@@ -1,0 +1,40 @@
+*{
+    box-sizing: border-box;
+}
+nav{
+    height: 0;
+}
+ul{
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    list-style-type: none;
+    padding: 0 30px;
+    margin: 0;
+    height: 70px;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+li{
+    font-size: 30px;
+    font-weight: bold;
+    background: linear-gradient(to bottom, var(--blue), var(--pink), var(--orange));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.contact{
+    cursor: pointer;
+    background: linear-gradient(to right, var(--blue), var(--pink));
+    padding: 7px 15px;
+    font-size: 20px;
+    border-radius: 4px;
+    color: white;
+    background-clip: initial;
+    -webkit-background-clip: initial;
+    -webkit-text-fill-color: initial;
+}

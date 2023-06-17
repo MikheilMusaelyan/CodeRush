@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MainserviceService } from '../mainservice.service';
 
 @Component({
   selector: 'app-navbar',
@@ -6,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-
+  constructor(private service: MainserviceService){}
+  contact(){
+    this.service.contact(true)
+  }
 }

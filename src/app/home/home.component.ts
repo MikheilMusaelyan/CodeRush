@@ -51,10 +51,10 @@ import { faWallet, faRocket, faPeopleGroup, faCheckDouble, faCertificate, faChec
   ]
 })
 export class HomeComponent implements OnInit, AfterViewInit{
-  firstWord: string = 'initial';
-  secondWord: string = 'initial';
-  animWrap: string = 'initial';
-  animEnded: boolean = false;
+  firstWord: string = localStorage.getItem('visited') == 'true' ? 'final' : 'initial';
+  secondWord: string = localStorage.getItem('visited') == 'true' ? 'final' : 'initial';
+  animWrap: string = localStorage.getItem('visited') == 'true' ? 'final' : 'initial';
+  animEnded: boolean = localStorage.getItem('visited') == 'true' ? true : false;
   wallet = faWallet;
   growth = faRocket;
   people = faPeopleGroup;
@@ -63,10 +63,13 @@ export class HomeComponent implements OnInit, AfterViewInit{
   check = faCheck;
   @ViewChild('second', {static: false}) second: any;
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 
   ngAfterViewInit(): void {
-    this.startUpAnim()
+    if(localStorage.getItem('visited') !== 'true'){
+      this.startUpAnim()
+    }
     this.scrollAnim()
   }
 
@@ -94,6 +97,7 @@ export class HomeComponent implements OnInit, AfterViewInit{
               setTimeout(() => {
                 this.animWrap = 'final'
                 setTimeout(() => {
+                  localStorage.setItem('visited', 'true')
                   this.animEnded = true
                 }, 350);
               }, 250);

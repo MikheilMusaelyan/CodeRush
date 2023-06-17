@@ -5,7 +5,7 @@
 <div class="plan-wrap">
     <div class="plan">
         <span class="sale">
-            11d Sale 
+            {{25 - date}}d Sale 
         </span>
         <h1 class="title"><span>Front End Development</span></h1>
         <h2 class="course-price">
@@ -14,7 +14,7 @@
         </h2>
         
         <div class="interact-wrap">
-            <button class="interact">Interested</button>
+            <button class="interact" (click)="contact()">Contact</button>
         </div>
 
         <span class="time-stamp">
@@ -130,7 +130,7 @@
 
     <div class="plan">
         <span class="sale">
-            11d Sale 
+            {{25 - date}}d Sale 
         </span>
         <h1 class="title"><span>Full Stack Development</span></h1>
         <h2 class="course-price">
@@ -138,8 +138,8 @@
             <span class="discount">$249/month</span>
         </h2>
         
-        <div class="interact-wrap">
-            <button class="interact">Interested</button>
+        <div class="interact-wrap" (click)="contact()">
+            <button class="interact">Contact</button>
         </div>
 
         <span class="time-stamp">

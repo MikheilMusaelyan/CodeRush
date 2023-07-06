@@ -12,18 +12,11 @@ import { MainserviceService } from '../mainservice.service';
 export class PlansComponent {
   constructor(private service: MainserviceService){}
   tick = faCheck
-  dropdown = faArrowDown
   time = faClock
   date = new Date().getDate()
 
   contact(){
     this.service.contact(true)
-  }
-
-  open(number: number){
-    let item: any = document.querySelectorAll('.stamp-wrap')[number]
-    item.style.height = '0'
-    console.log(item.style.height)
   }
 
 }

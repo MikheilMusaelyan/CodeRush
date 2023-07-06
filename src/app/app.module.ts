@@ -10,6 +10,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NavbarComponent } from './navbar/navbar.component';
 import { WhatweteachComponent } from './whatweteach/whatweteach.component';
 import { ContactComponent } from './contact/contact.component';
+import { ApplyComponent } from './apply/apply.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,13 +21,16 @@ import { ContactComponent } from './contact/contact.component';
     PlansComponent,
     NavbarComponent,
     WhatweteachComponent,
-    ContactComponent
+    ContactComponent,
+    ApplyComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

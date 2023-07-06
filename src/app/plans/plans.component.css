@@ -28,8 +28,7 @@ main{
 }
 .sub-title{
     font-size: 35px;
-    margin: 0 0 40px 0;
-    
+    margin: 0 0 20px 0;
 }
 .sub-title span{
     background: linear-gradient(to top, var(--pink), var(--orange)); 
@@ -41,9 +40,11 @@ main{
     display: flex;
     justify-content: center;
 }
+
 .plan{
     overflow: hidden;
     min-width: 200px;
+    max-width: 33vw;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -105,6 +106,7 @@ main{
     -webkit-text-fill-color: transparent;
     font-size: 30px;
     font-weight: bold;
+    text-align: center;
 }
 .week-count{
     font-size: 21px;
@@ -207,6 +209,31 @@ main{
     padding-top: 10px;
     text-align: center;
 }
+
+
+.plan-age{
+    font-size: 26px;
+    text-decoration: underline;
+    text-underline-offset: 6px;
+    padding: 50px 0 20px 0;
+    color: #3d3d3d;
+}
+.plan-age,.quote{
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+.quote{
+    font-size: 22px;
+    padding-bottom: 30px;
+    font-weight: 400;
+    color: #3d3d3d;
+}
+
+
+
+
+
 @media screen and (max-width: 1200px){
     .title{
         margin-top: 30px;
@@ -218,13 +245,19 @@ main{
         padding-left: 28px;
         display: block;
     }
+    .plan{
+        max-width: 40vw;
+    }
 }
 @media screen and (max-width: 960px){
     .plan{
-        width: 80%;
+        width: 70%;
+        max-width: initial;
     }
     .plan-wrap{
-        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: initial;
+        align-items: center;
     }
     .title{
         margin-top: 15px;
@@ -239,6 +272,8 @@ main{
     }
     .plan{
         margin: 10px 0;
+        width: 85%;
+        box-sizing: border-box;
     }
     .time-stamp{
         padding: 5px;
@@ -256,8 +291,11 @@ main{
     .main-title{
         font-size: 42px;
     }
-    .sub-title{
+    .sub-title, .plan-age{
         font-size: 24px;
+    }
+    .quote{
+        font-size: 19px;
     }
 }
 @media screen and (max-width: 500px){

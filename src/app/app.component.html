@@ -2,8 +2,12 @@
     <div (click)="close()" [@contactAnimation]="contactAnim" class="contact-wrap" *ngIf="contact">
         <app-contact></app-contact>
     </div>
+    
     <app-navbar></app-navbar>
     <app-home></app-home>
+    <div class="apply-wrap">
+        <app-apply></app-apply>
+    </div>
     <footer>
         <ul>
             
@@ -13,7 +17,7 @@
             </li>
             <li>
                 <fa-icon [icon]="phone"></fa-icon>
-                <a>347 680 7676</a>
+                <a>+1 347 680 7676</a>
             </li>
         </ul>
     </footer>

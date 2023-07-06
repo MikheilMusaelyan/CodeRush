@@ -19,4 +19,11 @@ export class PlansComponent {
   contact(){
     this.service.contact(true)
   }
+
+  open(number: number){
+    let item: any = document.querySelectorAll('.stamp-wrap')[number]
+    item.style.height = '0'
+    console.log(item.style.height)
+  }
+
 }

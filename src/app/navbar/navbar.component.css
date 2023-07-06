@@ -4,12 +4,24 @@
 nav{
     height: 0;
 }
-.logoend{
-    display: inline-block;
+.logo{
+    display: flex;
+}
+/* .logoend{
+    display: flex;
+    align-items: center;
     background: linear-gradient(to top, var(--blue), var(--pink),  white);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    font-size: 27px;
+} */
+/* .logoend.one{
+    margin-right: -4px;
+} */
+
+.logoimage{
+    width: 52px;
 }
 ul{
     color: white;

@@ -1,6 +1,7 @@
 main{
     min-width: 250px;
     position: relative;
+    background-color: white;
 }
 .contact-wrap{
     position: fixed;
@@ -23,8 +24,7 @@ li{
     padding: 10px 15px;
     font-size: 18px;
     cursor: pointer;
-    user-select: none;
-    -webkit-user-select: none;
+    
     color: var(--blue);
     transition: 200ms;
 }

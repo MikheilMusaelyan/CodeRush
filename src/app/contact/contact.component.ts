@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { faHouse, faMailBulk, faPhone, faSearch, faX } from '@fortawesome/free-solid-svg-icons';
 import { MainserviceService } from '../mainservice.service';
+import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
+
 
 @Component({
   selector: 'app-contact',
@@ -10,6 +12,7 @@ import { MainserviceService } from '../mainservice.service';
 export class ContactComponent {
   mail = faMailBulk
   phone = faPhone
+  fb = faFacebook
   x = faX
   constructor(private service: MainserviceService){
 

@@ -21,7 +21,7 @@ import { faMailBulk, faPhone } from '@fortawesome/free-solid-svg-icons';
   ]
 })
 export class AppComponent {
-  title = 'coderush';
+  title = 'progrush';
 
   fb = faFacebook
   insta = faInstagram

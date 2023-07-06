@@ -34,21 +34,26 @@ li{
 li:hover{
     background: rgb(239, 239, 239);
 }
-span{
+a{
+    text-decoration: none;
     display: inline-block;
     padding-left: 10px;
     font-weight: bold;
+    color: black;
 }
 .mail{
     color: var(--pink);
 }
 .phone{
-    color: var(--orange);
+    color: var(--orange) !important;
+}
+.fb{
+    color: var(--blue) !important;
 }
 .x-icon{
     display: flex;
     justify-content: flex-end;
-    color: var(--blue);
+    color: var(--pink);
     padding-bottom: 5px;
 }
 .x-icon fa-icon{

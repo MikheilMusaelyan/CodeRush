@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { MainserviceService } from './mainservice.service';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
-import { faMailBulk, faPhone } from '@fortawesome/free-solid-svg-icons';
+import { faMailBulk, faMessage, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -28,9 +28,11 @@ export class AppComponent {
   insta = faInstagram
   phone = faPhone
   email = faMailBulk
-
+  message = faMessage
+  
   contact: boolean = false;
   contactAnim = 'final'
+  messageOpen: boolean = false
 
   constructor(
     private service: MainserviceService,
@@ -52,30 +54,34 @@ export class AppComponent {
       }
     })
 
-    if(localStorage.getItem('visited') != 'true'){
-      localStorage.setItem('visited', 'true')
-      this.http.post(
-        'https://drfscheduler.up.railway.app/api/sendmail/', 
-        {
-          name: 'visited',
-          email: 'visited',
-          phone: 'visited',
-          course: 'visited'
-        }
-      ).subscribe(response => {}, error => {});
-    } else {
-      this.http.post(
-        'https://drfscheduler.up.railway.app/api/sendmail/', 
-        {
-          name: 'returning',
-          email: 'returning',
-          phone: 'returning',
-          course: 'returning'
-        }
-      ).subscribe(response => {}, error => {});
-    }
+    // if(localStorage.getItem('visited') != 'true'){
+    //   localStorage.setItem('visited', 'true')
+    //   this.http.post(
+    //     'https://drfscheduler.up.railway.app/api/sendmail/', 
+    //     {
+    //       name: 'visited',
+    //       email: 'visited',
+    //       phone: 'visited',
+    //       course: 'visited'
+    //     }
+    //   ).subscribe(response => {}, error => {});
+    // } else {
+    //   this.http.post(
+    //     'https://drfscheduler.up.railway.app/api/sendmail/', 
+    //     {
+    //       name: 'returning',
+    //       email: 'returning',
+    //       phone: 'returning',
+    //       course: 'returning'
+    //     }
+    //   ).subscribe(response => {}, error => {});
+    // }
   }
   
+  openMessage(){
+    this.messageOpen = !this.messageOpen
+  }
+
   close(e: MouseEvent){
     this.service.contact(false)
   }

@@ -40,6 +40,50 @@ a{
     display: inline-block;
     padding-left: 8px;
 }
+
+/* messages */
+
+.messages-wrap-main{
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 99;
+    display: flex;
+}
+.messages-wrap-main::before{
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    z-index: 1;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, var(--orange), var(--pink));
+}
+.messages-wrap{
+    z-index: 2;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.messages-wrap-open{
+    width: 400px;
+    height: 70vh;
+    border-radius: 25px;
+}
+.messages-wrap-closed{
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+}
+.message-icon{
+    color: var(--pink);
+    font-size: 23px;
+}
+
 @media screen and (max-width: 1000px) {
     ul{
         justify-content: center;

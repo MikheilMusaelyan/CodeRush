@@ -3,6 +3,15 @@
         <app-apply (click)="innerClick($event)"></app-apply>
         <!-- <app-contact (click)="outerClick($event)"></app-contact> -->
     </div>
+
+    <section class="messages-wrap-main" (click)="openMessage()">
+        <div class="messages-wrap messages-wrap-open">
+            <fa-icon class="message-icon" *ngIf="!messageOpen" [icon]="message"></fa-icon>
+            <div *ngIf="messageOpen">
+                <app-messages></app-messages>
+            </div>
+        </div>
+    </section>
     
     <app-navbar></app-navbar>
     <app-home></app-home>

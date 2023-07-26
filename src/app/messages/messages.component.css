@@ -9,6 +9,7 @@ main{
     overflow: auto;
     height: 100%;
     padding-right: 10px;
+    scroll-behavior: smooth;
 }
 .wrap-messages{
     padding: 15px;
@@ -61,6 +62,7 @@ span{
 .message{
     padding: 7px 9px;
     max-width: 70%;
+    transition: 500ms 200ms;
 }
 .message-span{
     display: block;

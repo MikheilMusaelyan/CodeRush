@@ -1,6 +1,6 @@
 <main>
     <div class="wrap-messages">
-        <div class="messages">
+        <div class="messages" #messageScroll>
             <div class="message-wrap" *ngFor="let i of messages; let j = index"
             [ngClass]="{
                 'message-wrap-right': i.sender === 'me',

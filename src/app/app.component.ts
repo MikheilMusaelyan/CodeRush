@@ -23,6 +23,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AppComponent {
   title = 'progrush';
+  joined: boolean = false;
+  firstOpened: boolean = false;
 
   fb = faFacebook
   insta = faInstagram
@@ -33,7 +35,8 @@ export class AppComponent {
   
   contact: boolean = false;
   contactAnim = 'final'
-  messageOpen: boolean = false
+  messageOpen: boolean = false;
+  amountNotRead: number = 0;
 
   constructor(
     private service: MainserviceService,
@@ -53,6 +56,19 @@ export class AppComponent {
             this.contact = false;
           }, 300);
       }
+    })
+
+    this.service.gotMessage.subscribe(() => {
+      if(!this.messageOpen){
+        this.amountNotRead++
+      }
+      if(this.firstOpened == false){
+        this.openMessage(true)
+      }
+    })
+
+    this.service.joinedRoom.subscribe((bool:boolean) => {
+      this.joined = true
     })
 
     // if(localStorage.getItem('visited') != 'true'){
@@ -79,18 +95,29 @@ export class AppComponent {
     // }
   }
   
-  openMessage(event: MouseEvent, bool: boolean){
-    event.stopPropagation()
+  openMessage(bool: boolean, event?: MouseEvent){
+    this.amountNotRead = 0
+    if(this.firstOpened == false){
+      this.firstOpened = true
+      if(this.joined == true){
+        this.joined = false
+        setTimeout(() => {
+          this.joined = true
+        }, 1500);
+      }
+    }
+    if(event){
+      event.stopPropagation()
+    }
     this.messageOpen = bool
-    console.log(this.messageOpen)
+    this.service.onClick(bool)
   }
 
-  close(e: MouseEvent){
+  close(){
     this.service.contact(false)
   }
 
   innerClick(event: MouseEvent){
     event.stopPropagation()
-    console.log('in')
   }
 }

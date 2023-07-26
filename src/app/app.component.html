@@ -1,17 +1,24 @@
 <main>
-    <div (click)="close($event)" [@contactAnimation]="contactAnim" class="contact-wrap" *ngIf="contact">
+    <div (click)="close()" [@contactAnimation]="contactAnim" class="contact-wrap" *ngIf="contact">
         <app-apply (click)="innerClick($event)"></app-apply>
         <!-- <app-contact (click)="outerClick($event)"></app-contact> -->
     </div>
 
-    <section class="messages-wrap-main" [ngClass]="messageOpen ? 'messages-wrap-open' : 'messages-wrap-closed'" (click)="openMessage($event, true)">
+    <section class="messages-wrap-main" [ngClass]="messageOpen ? 'messages-wrap-open' : 'messages-wrap-closed'" (click)="openMessage(true, $event)">
         <div class="messages-wrap" *ngIf="!messageOpen">
             <fa-icon class="message-icon" [icon]="message"></fa-icon>    
         </div>
+        <div class="amount-not-read" *ngIf="amountNotRead > 0">
+            {{amountNotRead}}
+        </div>
         <!-- blocks -->
         <div class="close-wrap" *ngIf="messageOpen">
-            <span class="messenger-name">Michael</span>
-            <fa-icon [icon]="closeIcon" class="close-icon" (click)="openMessage($event, false)"></fa-icon>
+            <span class="messenger-name" *ngIf="joined == true">Michael</span>
+            <span class="loading" *ngIf="joined == false">
+                <app-loading></app-loading>
+                <span class="finding">Connecting...</span>
+            </span>
+            <fa-icon [icon]="closeIcon" class="close-icon" (click)="openMessage(false, $event)"></fa-icon>
         </div>
         <div [ngClass]="{'zeroWidth': !messageOpen}">
             <app-messages></app-messages>

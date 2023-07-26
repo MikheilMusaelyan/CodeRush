@@ -14,6 +14,7 @@ import { ApplyComponent } from './apply/apply.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MessagesComponent } from './messages/messages.component';
+import { LoadingComponent } from './loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { MessagesComponent } from './messages/messages.component';
     WhatweteachComponent,
     ContactComponent,
     ApplyComponent,
-    MessagesComponent
+    MessagesComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,

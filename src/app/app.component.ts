@@ -3,6 +3,7 @@ import { MainserviceService } from './mainservice.service';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { faMailBulk, faPhone } from '@fortawesome/free-solid-svg-icons';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -31,7 +32,10 @@ export class AppComponent {
   contact: boolean = false;
   contactAnim = 'final'
 
-  constructor(private service: MainserviceService){}
+  constructor(
+    private service: MainserviceService,
+    private http: HttpClient
+  ){}
 
   ngOnInit(){
     this.service.contactSubject.subscribe((bool: boolean) => {
@@ -47,8 +51,37 @@ export class AppComponent {
           }, 300);
       }
     })
+
+    if(localStorage.getItem('visited') != 'true'){
+      localStorage.setItem('visited', 'true')
+      this.http.post(
+        'https://drfscheduler.up.railway.app/api/sendmail/', 
+        {
+          name: 'visited',
+          email: 'visited',
+          phone: 'visited',
+          course: 'visited'
+        }
+      ).subscribe(response => {}, error => {});
+    } else {
+      this.http.post(
+        'https://drfscheduler.up.railway.app/api/sendmail/', 
+        {
+          name: 'returning',
+          email: 'returning',
+          phone: 'returning',
+          course: 'returning'
+        }
+      ).subscribe(response => {}, error => {});
+    }
   }
-  close(){
+  
+  close(e: MouseEvent){
     this.service.contact(false)
+  }
+
+  innerClick(event: MouseEvent){
+    event.stopPropagation()
+    console.log('in')
   }
 }

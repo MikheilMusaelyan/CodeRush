@@ -1,7 +1,11 @@
-/* form.component.css */
+
 h2{
     padding-bottom: 15px;
     text-align: center;
+    background: linear-gradient(to bottom, var(--blue), var(--pink), var(--orange));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 .form-container {
     background-color: #fff;
@@ -10,6 +14,7 @@ h2{
     width: 400px;
     box-sizing: border-box;
     border: 1px solid #ccc;
+    height: max-content;
 }
   
   .form-group {
@@ -54,11 +59,121 @@ h2{
   }
   
   button:disabled {
-    background-color: #ccc;
     cursor: not-allowed;
   }
   
   .error{
     color: red;
-    padding: 10px;
+    padding: 5px 10px;
   }
+  .messages{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    padding: 40px 20px;
+    border-radius: 10px;
+  }
+  .line-wrap,
+  .message-wrap{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    align-items: flex-end;
+  }
+  .message-wrap{
+    justify-content: center;
+  }
+  .message-wrap h4{
+    text-align: center;
+  }
+  .line{
+    transform-origin: left;
+    transition: 3s linear;
+    width: 100%;
+    height: 4px;
+    border-radius: 20px;
+    background: linear-gradient(to right, var(--blue), var(--pink), var(--orange));
+  }
+
+
+
+
+
+
+
+*{
+    box-sizing: border-box;
+}
+main{
+    
+    position: relative;
+}
+.card{
+    width: 100%;
+    background: white;
+    padding-top: 20px;
+}
+ul{
+    padding: 0;
+    margin: 0;
+}
+li{
+    padding: 7px 10px;
+    transition: 200ms;
+    border-radius: 4px;
+}
+
+li:hover{
+    background: rgb(239, 239, 239);
+}
+a{
+    text-decoration: none;
+    display: inline-block;
+    padding-left: 10px;
+    color: black;
+}
+.mail{
+    color: var(--pink);
+}
+.phone{
+    color: var(--orange) !important;
+}
+.fb{
+    color: var(--blue) !important;
+}
+.x-icon{
+    display: flex;
+    justify-content: flex-end;
+    color: var(--pink);
+    padding-bottom: 5px;
+}
+.x-icon fa-icon{
+    cursor: pointer;
+    padding: 0 10px;
+}
+
+
+@media screen and (max-width: 650px){
+    main{
+      padding: 10px;
+    }
+}
+
+@media screen and (max-width: 430px){
+  .form-container{
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 350px){
+  main{
+    padding: 20px;
+  }
+}

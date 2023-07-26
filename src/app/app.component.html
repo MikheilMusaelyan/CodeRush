@@ -1,13 +1,12 @@
 <main>
-    <div (click)="close()" [@contactAnimation]="contactAnim" class="contact-wrap" *ngIf="contact">
-        <app-contact></app-contact>
+    <div (click)="close($event)" [@contactAnimation]="contactAnim" class="contact-wrap" *ngIf="contact">
+        <app-apply (click)="innerClick($event)"></app-apply>
+        <!-- <app-contact (click)="outerClick($event)"></app-contact> -->
     </div>
     
     <app-navbar></app-navbar>
     <app-home></app-home>
-    <div class="apply-wrap">
-        <app-apply></app-apply>
-    </div>
+
     <footer>
         <ul>
             
@@ -22,3 +21,4 @@
         </ul>
     </footer>
 </main>
+

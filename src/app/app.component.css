@@ -5,10 +5,13 @@ main{
 }
 .contact-wrap{
     position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     top: 0;
     left: 0;
-    height: 100svh;
+    height: 100vh;
     background: rgba(0, 0, 0, 0.6);
     z-index: 101;
     /* transition: 300ms; */

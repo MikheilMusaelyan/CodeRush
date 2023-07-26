@@ -17,12 +17,13 @@ main{
     overflow: hidden;
     position: absolute;
     z-index: 100;
+    background-color: black;
 }
 .animation-wrap{
-    width: 100%;
+    width: calc(100% - 20px);
     height: 100%;
     position: absolute;
-    left: 0;
+    left: 10px;
     top: 0;
     display: flex;
     justify-content: center;

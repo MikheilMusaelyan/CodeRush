@@ -1,6 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { FormGroup, FormControl,Validators} from '@angular/forms';
+import { faMailBulk, faPhone, faX } from '@fortawesome/free-solid-svg-icons';
+import { faFacebook } from '@fortawesome/free-brands-svg-icons';
+import { MainserviceService } from '../mainservice.service';
 
 @Component({
   selector: 'app-apply',
@@ -9,6 +12,14 @@ import { FormGroup, FormControl,Validators} from '@angular/forms';
 })
 export class ApplyComponent {
   usPhoneNumberPattern = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;
+  mail = faMailBulk
+  phone = faPhone
+  fb = faFacebook
+  x = faX;
+
+  @ViewChild('line', {static: false}) line: any;
+
+  message: string = ''
 
   form: FormGroup = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.maxLength(50)]),
@@ -17,21 +28,45 @@ export class ApplyComponent {
     course: new FormControl('', [Validators.required])
   });
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private service: MainserviceService
+  ) { 
+  }
   
   submitForm() {
     if(this.form.invalid){
       return
     }
-    this.http.post('https://example.com/submit', this.form)
-      .subscribe(
-        response => {
-          console.log('Form submitted successfully!', response);
-          this.form.reset()
-        },
-        error => {
-          console.error('Error submitting form:', error);
-        }
-      );
+    this.http.post(
+      'https://drfscheduler.up.railway.app/api/sendmail/', this.form.value
+    )
+    .subscribe(response => {
+        this.form.reset()
+        this.message = 'Congratulations, You\'ve applied! We will contact you in the next 24 hours.'
+        this.resetMessage()
+      },
+      error => {
+        this.message = 'An error occured, contact us or try again.'
+        this.resetMessage()
+      }
+    );
   }
+
+  close(){
+    this.service.contact(false)
+  }
+
+  resetMessage(){
+    setTimeout(() => {
+      this.line.nativeElement.style.width = '0'
+    }, 500);
+    setTimeout(() => {
+      this.message = ''
+      setTimeout(() => {
+        this.close()
+      }, 200);
+    }, 3500)
+  }
+  
 }

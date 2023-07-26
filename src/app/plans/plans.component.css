@@ -229,8 +229,14 @@ main{
     font-weight: 400;
     color: #3d3d3d;
 }
+.orangetick{
+    color: var(--orange);
+}
 
-
+.continue.red{
+    color: red;
+    padding: 0 0 10px 0 !important;
+}
 
 
 

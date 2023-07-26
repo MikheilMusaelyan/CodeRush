@@ -9,7 +9,6 @@ h1{
     -webkit-text-fill-color: transparent;
 }
 main{
-    min-height: 100svh;
     display: flex;
     align-items: center;
     justify-content: center;

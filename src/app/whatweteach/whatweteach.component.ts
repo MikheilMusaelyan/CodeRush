@@ -10,7 +10,7 @@ export class WhatweteachComponent {
   @ViewChild('skillWrap', {static: false}) skillWrap: any;
   images: any[] = [
     { width: 5, scrollSpeed: 0.5, image: 'https://clipground.com/images/html-logo-png-3.png' },
-    { width: 5, scrollSpeed: 0.1, image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/1452px-CSS3_logo_and_wordmark.svg.png'},
+    { width: 5, scrollSpeed: 0.2, image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/1452px-CSS3_logo_and_wordmark.svg.png'},
     { width: 8, scrollSpeed: -0.1, image: 'https://logos-download.com/wp-content/uploads/2019/01/JavaScript_Logo.png'},
     //bootstrap 4
     { width: 17, scrollSpeed: -0.2, image: 'https://www.drupal.org/files/project-images/bootstrap-stack.png' },
@@ -20,7 +20,7 @@ export class WhatweteachComponent {
     { width: 16, scrollSpeed: -0.3, image: 'https://ngrx.io/assets/images/badge.svg' },
     { width: 7, scrollSpeed: 0.05, image: 'https://tse3.mm.bing.net/th?id=OIP.6ZqA9PK6o3MiO9U1mN31LgHaHa&pid=Api&P=0' },
     //node 8
-    { width: 9, scrollSpeed: 0.1, image: 'https://logos-download.com/wp-content/uploads/2016/09/Node_logo_NodeJS.png' },
+    { width: 9, scrollSpeed: 0.25, image: 'https://logos-download.com/wp-content/uploads/2016/09/Node_logo_NodeJS.png' },
     { width: 1, scrollSpeed: 0.3, image: 'https://tse1.mm.bing.net/th?id=OIP.b2Cmei85n1BpF-LRLBmcnwAAAA&pid=Api&P=0' },
     { width: 12, scrollSpeed: -0.2, image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png' },
     { width: 0, scrollSpeed: 0.4, image: 'https://www.djangoproject.com/m/img/logos/django-logo-negative.svg' },

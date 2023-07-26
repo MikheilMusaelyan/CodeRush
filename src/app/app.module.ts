@@ -13,6 +13,7 @@ import { ContactComponent } from './contact/contact.component';
 import { ApplyComponent } from './apply/apply.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { MessagesComponent } from './messages/messages.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { HttpClientModule } from '@angular/common/http';
     NavbarComponent,
     WhatweteachComponent,
     ContactComponent,
-    ApplyComponent
+    ApplyComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,

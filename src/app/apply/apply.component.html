@@ -1,4 +1,12 @@
 <main>
+    <div class="messages" *ngIf="message != ''">
+        <div class="message-wrap">
+            <h4>{{message}}</h4>
+        </div>
+        <div class="line-wrap">
+            <div class="line" #line></div>
+        </div>
+    </div>
     <div class="form-container">
         <h2>Apply</h2>
         <form (ngSubmit)="submitForm()" [formGroup]="form">
@@ -38,10 +46,10 @@
 
                 <div class="form-group">
                     <select formControlName="course">
-                        <option value="">Select Course</option>
+                        <option value="" selected>Select Course</option>
                         <option value="frontend">Front End</option>
                         <option value="fullstack">Full Stack</option>
-                        <option value="junior">Junior Academy (9-15 years)</option>
+                        <option value="junior">Junior Academy (10-15 years)</option>
                     </select>
                     <div class="error-wrap" *ngIf="form.controls['course'].invalid && 
                         (form.controls['course'].dirty || form.controls['course'].touched)">
@@ -53,6 +61,23 @@
           <div class="button-wrap">
             <button type="submit" [disabled]="!form.valid">Submit</button>
           </div>
+
+          <div class="card">
+            <ul>
+                <li>
+                    <fa-icon [icon]="phone" class="phone"></fa-icon>
+                    <a>347 680 7676</a>
+                </li>
+                <li>
+                    <fa-icon [icon]="mail" class="mail"></fa-icon>
+                    <a>progrushacademy@gmail.com</a>
+                </li>
+                
+            </ul>
+        </div>
         </form>
     </div>
+
+    
+
 </main>

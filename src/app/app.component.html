@@ -4,12 +4,17 @@
         <!-- <app-contact (click)="outerClick($event)"></app-contact> -->
     </div>
 
-    <section class="messages-wrap-main" (click)="openMessage()">
-        <div class="messages-wrap messages-wrap-open">
-            <fa-icon class="message-icon" *ngIf="!messageOpen" [icon]="message"></fa-icon>
-            <div *ngIf="messageOpen">
-                <app-messages></app-messages>
-            </div>
+    <section class="messages-wrap-main" [ngClass]="messageOpen ? 'messages-wrap-open' : 'messages-wrap-closed'" (click)="openMessage($event, true)">
+        <div class="messages-wrap" *ngIf="!messageOpen">
+            <fa-icon class="message-icon" [icon]="message"></fa-icon>    
+        </div>
+        <!-- blocks -->
+        <div class="close-wrap" *ngIf="messageOpen">
+            <span class="messenger-name">Michael</span>
+            <fa-icon [icon]="closeIcon" class="close-icon" (click)="openMessage($event, false)"></fa-icon>
+        </div>
+        <div [ngClass]="{'zeroWidth': !messageOpen}">
+            <app-messages></app-messages>
         </div>
     </section>
     

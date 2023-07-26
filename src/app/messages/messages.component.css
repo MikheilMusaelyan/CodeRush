@@ -1,0 +1,107 @@
+*{
+    box-sizing: border-box;
+}
+main{
+    height: calc(70vh - 65px);
+    overflow: hidden;
+}
+.messages{
+    overflow: auto;
+    height: 100%;
+    padding-right: 10px;
+}
+.wrap-messages{
+    padding: 15px;
+    height: calc(100% - 67px);
+}
+span{
+    display: inline-block;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+.message-wrap-right{
+    display: flex;
+    justify-content: flex-end;
+}
+/* right */
+.message-wrap-right > .message{
+    border-radius: 15px 15px 3px 15px;
+    background: var(--blue);
+}
+.message-wrap-right > .message > .message-date{
+    text-align: right;
+}
+/* left */
+.message-wrap-left > .message{
+    border-radius: 15px 15px 15px 3px;
+    background: var(--pink);
+}
+
+
+.message-wrap{
+    margin-bottom: 1px;
+}
+.first-message{
+    margin-top: 14px;
+}
+
+.message-wrap-right.my-middle-message > .message{
+    border-radius: 15px 3px 3px 15px !important;
+}
+.message-wrap-right.my-last-message > .message{
+    border-radius: 15px 3px 15px 15px !important;
+}
+.message-wrap-left.my-middle-message > .message{
+    border-radius: 3px 15px 15px 3px !important;
+}
+.message-wrap-left.my-last-message > .message{
+    border-radius: 3px 15px 15px 15px !important;
+}
+
+.message{
+    padding: 7px 9px;
+    max-width: 70%;
+}
+.message-span{
+    display: block;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 19px;
+}
+
+
+
+form{
+    padding: 15px;
+    box-shadow: 0 0 10px rgb(229, 229, 229);
+}
+input{
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 10px 12px 12px 12px;
+    border-radius: 15px;
+    box-shadow: 0 0.5px 6px #dddbdb;
+    font-weight: bold;
+    color: var(--blue);
+}
+
+/* WebKit-based browsers (Chrome, Safari) */
+/* Track */
+::-webkit-scrollbar {
+    width: 6px; /* Adjust the width as needed */
+  }
+  
+  /* Thumb */
+  ::-webkit-scrollbar-thumb {
+    background-color: #dedede;
+    border-radius: 10px; /* Round the thumb corners, adjust as needed */
+  }
+  
+  /* Track (optional) */
+  ::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: #f0f0f0; /* Adjust the background color as needed */
+  }
+  

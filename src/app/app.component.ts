@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { MainserviceService } from './mainservice.service';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
-import { faMailBulk, faMessage, faPhone } from '@fortawesome/free-solid-svg-icons';
+import { faMailBulk, faMessage, faMinus, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -29,6 +29,7 @@ export class AppComponent {
   phone = faPhone
   email = faMailBulk
   message = faMessage
+  closeIcon = faMinus
   
   contact: boolean = false;
   contactAnim = 'final'
@@ -78,8 +79,10 @@ export class AppComponent {
     // }
   }
   
-  openMessage(){
-    this.messageOpen = !this.messageOpen
+  openMessage(event: MouseEvent, bool: boolean){
+    event.stopPropagation()
+    this.messageOpen = bool
+    console.log(this.messageOpen)
   }
 
   close(e: MouseEvent){

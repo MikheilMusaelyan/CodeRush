@@ -1,0 +1,23 @@
+<main>
+    <div class="wrap-messages">
+        <div class="messages">
+            <div class="message-wrap" *ngFor="let i of messages; let j = index"
+            [ngClass]="{
+                'message-wrap-right': i.sender === 'me',
+                'message-wrap-left': i.sender === 'them',
+                'first-message': messages[j-1]?.sender != i?.sender,
+                'my-middle-message': messages[j+1]?.sender == i?.sender && messages[j-1]?.sender == i.sender,
+                'my-last-message': messages[j-1]?.sender == i?.sender && messages[j+1]?.sender != i?.sender 
+              }">
+                <div class="message" >
+                    <span class="message-span">
+                        {{i.message}}
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <form (ngSubmit)="sendMessage()" [formGroup]="messageForm">
+        <input class="input" maxlength="200" type="text" formControlName="message" placeholder="Type your message">
+    </form>
+</main>

@@ -62,6 +62,7 @@ span{
 .message{
     padding: 7px 9px;
     max-width: 70%;
+    width: max-content;
     transition: 500ms 200ms;
 }
 .message-span{

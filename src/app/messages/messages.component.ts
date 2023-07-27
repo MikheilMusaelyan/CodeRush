@@ -20,6 +20,9 @@ export class MessagesComponent {
     this.service.gotMessage.subscribe((message: string) => {
       this.pushToMessages('them', message)
     })
+    this.service.sendAll.subscribe(data => {
+      this.sendToMichael()
+    })
   }
 
   @ViewChild('messageScroll', {static: false}) messageScroll: any
@@ -43,6 +46,13 @@ export class MessagesComponent {
       message: message
     })
     this.scrollToBottom()
+  }
+
+  sendToMichael(){
+    const filtered = this.messages.filter(msg => msg.socketId == 'michael')
+    if(filtered == this.messages){
+      this.service.sendToMichael(filtered)
+    }
   }
 
   scrollToBottom() {

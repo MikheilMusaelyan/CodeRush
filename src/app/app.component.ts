@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component } from '@angular/core';
 import { MainserviceService } from './mainservice.service';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
@@ -37,12 +37,6 @@ export class AppComponent {
   contactAnim = 'final'
   messageOpen: boolean = false;
   amountNotRead: number = 0;
-
-  @HostListener('window:beforeunload', ['$event'])
-  onBeforeUnload(event: any) {
-    this.service.removeMe()
-    event.returnValue = null;
-  }
 
   constructor(
     private service: MainserviceService,

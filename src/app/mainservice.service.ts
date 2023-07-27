@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs'
 import { io } from 'socket.io-client';
@@ -11,7 +10,8 @@ export class MainserviceService {
   clickSubject: Subject<any> = new Subject()
   gotMessage: Subject<any> = new Subject()
   joinedRoom: Subject<any> = new Subject()
-  joined: boolean = false;
+  sendAll: Subject<any> = new Subject()
+  joined: boolean = false
 
   socket = io('https://progrushbackend.onrender.com')
   
@@ -19,11 +19,7 @@ export class MainserviceService {
   randomNumber = Math.floor(Math.random() * 90000) + 10000;
   randomNum = String(this.mySocketId) + 'time' + String(this.randomNumber)
 
-  constructor(
-    private http: HttpClient
-  ){
-    this.addMyselfTotheBase()
-
+  constructor(){
     this.socket.on('connect', () => {
       if(this.joined == true){
         return
@@ -31,38 +27,27 @@ export class MainserviceService {
       this.socket.emit('joinroom', this.randomNum, cb => {
         this.joined = true
         this.joinedRoom.next(true)
+        console.log('dsadsa')
       })
     })
 
     this.socket.on('recievemessage', (info: any) => {
       this.gotMessage.next(info)
     })
-  }
 
-  addMyselfTotheBase(){
-    this.http.post('https://progrushbackend.onrender.com/person', {socketId: this.randomNum})
-    .subscribe(() => {
-      console.log('darat')
+    this.socket.on('michaeljoined', () => {
+      this.sendAll.next(true)
     })
   }
-
-  removeMe(){
-    this.http.delete('https://progrushbackend.onrender.com/person/' + this.randomNum).subscribe(() => {})
+  
+  sendToMichael(messages: any[]){
+    this.socket.emit('sendallmessages', {messages: messages, socketId: this.randomNum})
   }
   
   sendMessage(data: string){
     this.socket.emit('sendmessage', {
       message: data,
       socketId: this.randomNum
-    })
-
-    this.http.post('https://progrushbackend.onrender.com/message', 
-    {
-      socketId: this.randomNum,
-      message: data
-    })
-    .subscribe(() => {
-      console.log('bobo')
     })
   }
 

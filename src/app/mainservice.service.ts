@@ -12,7 +12,7 @@ export class MainserviceService {
   joinedRoom: Subject<any> = new Subject()
   joined: boolean = false
 
-  socket = io('https://socialmedia.up.railway.app')
+  socket = io('https://progrushbackend.onrender.com ')
   
   mySocketId = new Date().getTime()
   randomNumber = Math.floor(Math.random() * 90000) + 10000;
@@ -29,7 +29,7 @@ export class MainserviceService {
       })
     })
 
-    this.socket.on('gotmessage', (info: any) => {
+    this.socket.on('recievemessage', (info: any) => {
       this.gotMessage.next(info)
     })
   }

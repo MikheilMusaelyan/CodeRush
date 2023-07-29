@@ -49,10 +49,7 @@ export class MessagesComponent {
   }
 
   sendToMichael(){
-    const filtered = this.messages.filter(msg => msg.socketId == 'michael')
-    if(filtered == this.messages){
-      this.service.sendToMichael(filtered)
-    }
+    this.service.sendToMichael(this.messages)
   }
 
   scrollToBottom() {

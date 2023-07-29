@@ -71,28 +71,29 @@ export class AppComponent {
       this.joined = true
     })
 
-    // if(localStorage.getItem('visited') != 'true'){
-    //   localStorage.setItem('visited', 'true')
-    //   this.http.post(
-    //     'https://drfscheduler.up.railway.app/api/sendmail/', 
-    //     {
-    //       name: 'visited',
-    //       email: 'visited',
-    //       phone: 'visited',
-    //       course: 'visited'
-    //     }
-    //   ).subscribe(response => {}, error => {});
-    // } else {
-    //   this.http.post(
-    //     'https://drfscheduler.up.railway.app/api/sendmail/', 
-    //     {
-    //       name: 'returning',
-    //       email: 'returning',
-    //       phone: 'returning',
-    //       course: 'returning'
-    //     }
-    //   ).subscribe(response => {}, error => {});
-    // }
+    if(localStorage.getItem('visited') != 'true'){
+      localStorage.setItem('visited', 'true')
+      localStorage.setItem('id', this.service.randomNum)
+      this.http.post(
+        'https://drfscheduler.up.railway.app/api/sendmail/', 
+        {
+          name: 'visited',
+          email: localStorage.getItem('id'),
+          phone: 'visited',
+          course: 'visited',
+        }
+      ).subscribe(response => {}, error => {});
+    } else {
+      this.http.post(
+        'https://drfscheduler.up.railway.app/api/sendmail/', 
+        {
+          name: 'returning',
+          email: localStorage.getItem('id'),
+          phone: 'returning',
+          course: 'returning'
+        }
+      ).subscribe(response => {}, error => {});
+    }
   }
   
   openMessage(bool: boolean, event?: MouseEvent){

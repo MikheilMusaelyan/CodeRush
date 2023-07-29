@@ -27,7 +27,6 @@ export class MainserviceService {
       this.socket.emit('joinroom', this.randomNum, cb => {
         this.joined = true
         this.joinedRoom.next(true)
-        console.log('dsadsa')
       })
     })
 
@@ -36,6 +35,7 @@ export class MainserviceService {
     })
 
     this.socket.on('michaeljoined', () => {
+      console.log('kle')
       this.sendAll.next(true)
     })
   }

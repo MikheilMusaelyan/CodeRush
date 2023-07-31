@@ -56,13 +56,14 @@ a{
 .messages-wrap-main::before{
     content: "";
     position: absolute;
-    top: -5px;
-    left: -5px;
+    top: -6px;
+    left: -6px;
     z-index: 1;
-    width: 58px;
-    height: 58px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     background: linear-gradient(45deg, var(--orange), var(--pink));
+    animation: 4s rotate infinite linear;
 }
 .messages-wrap{
     width: 100%;
@@ -73,6 +74,11 @@ a{
     justify-content: center;
     z-index: 2;
     background: white;
+}
+@keyframes rotate{
+    100%{
+        transform: rotate(360deg);
+    }
 }
 .messages-wrap-open{
     overflow: hidden;

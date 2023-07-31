@@ -1,4 +1,4 @@
-<main>
+<main #main>
     <h1 class="main-title">Paths</h1>
     <h2 class="sub-title"><span>Learning from mentors has never been </span> <span> this affordable.</span></h2>
     
@@ -6,20 +6,25 @@
     <span class="quote"><em>Make your Childrens' screen time more productive</em></span>
     
     <div class="plan-wrap">
-
         <div class="plan">
-            <span class="sale">
-                Sale Ends in 2d
-            </span>
-            <h1 class="title">Junior Academy</h1>
-            <h2 class="course-price">
-                <span class="discount linethrough">$400</span>
-                <span class="discount">$149/month</span>
-            </h2>
-            <span class="continue red">first 3 classes for FREE</span>
-            
-            <div class="interact-wrap">
-                <button class="interact" (click)="contact()">Apply</button>
+            <div class="top-info-wrap"
+            style="background-image: url(../../assets/tech1.png);">
+                <div class="top-info-before"></div>
+                <span class="sale">
+                    Sale Ends in 2d
+                </span>
+                <div class="top-info">
+                    <h1 class="title">Junior Academy</h1>
+                    <h2 class="course-price">
+                        <span class="discount linethrough">$400</span>
+                        <span class="discount">$149/month</span>
+                    </h2>
+                    <span class="continue red">first 3 classes for FREE</span>
+                    
+                    <div class="interact-wrap">
+                        <button class="interact" (click)="contact()">Apply</button>
+                    </div>
+                </div>
             </div>
     
             <div class="stamp-wrap">
@@ -99,17 +104,23 @@
     <div class="plan-wrap">
 
     <div class="plan">
-        <span class="sale">
-            Sale Ends in 2d
-        </span>
-        <h1 class="title">Front End Development</h1>
-        <h2 class="course-price">
-            <span class="discount linethrough">$500</span>
-            <span class="discount">$199/month</span>
-        </h2>
-        
-        <div class="interact-wrap">
-            <button class="interact" (click)="contact()">Apply</button>
+        <div class="top-info-wrap"
+            style="background-image: url(../../assets/tech3.png);">
+            <div class="top-info-before" style="background: rgba(0, 0, 0, 0.65);"></div>
+            <span class="sale">
+                Sale Ends in 2d
+            </span>
+            <div class="top-info">
+                <h1 class="title">Front End Development</h1>
+                <h2 class="course-price">
+                    <span class="discount linethrough">$500</span>
+                    <span class="discount">$199/month</span>
+                </h2>
+                
+                <div class="interact-wrap">
+                    <button class="interact" (click)="contact()">Apply</button>
+                </div>
+            </div>
         </div>
 
         <div class="stamp-wrap">
@@ -176,18 +187,22 @@
     </div>
 
     <div class="plan">
-        <span class="sale">
-            Sale Ends in 2d
-        </span>
-        <h1 class="title">Full Stack Development</h1>
-        <span class="continue">(After the Front End Course)</span>
-        <h2 class="course-price">
-            <span class="discount linethrough">$600</span>
-            <span class="discount">$249/month</span>
-        </h2>
-        
-        <div class="interact-wrap" (click)="contact()">
-            <button class="interact">Apply</button>
+
+        <div class="top-info-wrap"
+            style="background-image: url(../../assets/front-end-developer.jpg);">
+            <div class="top-info-before" style="background: rgba(0, 0, 0, 0.68);"></div>
+            <div class="top-info">
+                <h1 class="title">Full Stack Development</h1>
+                <h2 class="course-price">
+                    <span class="discount linethrough">$600</span>
+                    <span class="discount">$249/month</span>
+                </h2>
+                <span class="continue red">(After the Front End Course)</span>
+
+                <div class="interact-wrap">
+                    <button class="interact" (click)="contact()">Apply</button>
+                </div>
+            </div>
         </div>
 
         <div class="stamp-wrap">

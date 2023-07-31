@@ -70,42 +70,16 @@ export class AppComponent {
     this.service.joinedRoom.subscribe((bool:boolean) => {
       this.joined = true
     })
-
-    if(localStorage.getItem('visited') != 'true'){
-      localStorage.setItem('visited', 'true')
-      localStorage.setItem('id', this.service.randomNum)
-      this.http.post(
-        'https://drfscheduler.up.railway.app/api/sendmail/', 
-        {
-          name: 'visited',
-          email: localStorage.getItem('id'),
-          phone: 'visited',
-          course: 'visited',
-        }
-      ).subscribe(response => {}, error => {});
-    } else {
-      this.http.post(
-        'https://drfscheduler.up.railway.app/api/sendmail/', 
-        {
-          name: 'returning',
-          email: localStorage.getItem('id'),
-          phone: 'returning',
-          course: 'returning'
-        }
-      ).subscribe(response => {}, error => {});
-    }
   }
   
   openMessage(bool: boolean, event?: MouseEvent){
     this.amountNotRead = 0
     if(this.firstOpened == false){
       this.firstOpened = true
-      if(this.joined == true){
-        this.joined = false
-        setTimeout(() => {
-          this.joined = true
-        }, 2200);
-      }
+      this.joined = false
+      setTimeout(() => {
+        this.joined = true
+      }, 3000);
     }
     if(event){
       event.stopPropagation()

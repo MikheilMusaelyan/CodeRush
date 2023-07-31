@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { faWallet, faRocket, faPeopleGroup, faCheckDouble, faCertificate, faCheck, faEdit } from '@fortawesome/free-solid-svg-icons';
+import { MainserviceService } from '../mainservice.service';
 
 @Component({
   selector: 'app-home',
@@ -63,7 +64,13 @@ export class HomeComponent implements OnInit, AfterViewInit{
   check = faCheck;
   @ViewChild('second', {static: false}) second: any;
 
+  constructor(private service: MainserviceService){}
+
   ngOnInit(): void {
+  }
+
+  scroll(){
+    this.service.scrollAuto()
   }
 
   ngAfterViewInit(): void {

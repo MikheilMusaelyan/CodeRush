@@ -18,6 +18,8 @@
         </div>
     </div>
     <form (ngSubmit)="sendMessage()" [formGroup]="messageForm">
-        <input class="input" maxlength="200" type="text" formControlName="message" placeholder="Type your message">
+        <div class="inputholder">
+            <input class="input" maxlength="200" type="text" formControlName="message" placeholder="Type your message">
+        </div>
     </form>
 </main>

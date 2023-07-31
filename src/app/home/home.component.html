@@ -18,9 +18,11 @@
         <div class="hero-image-wrap"></div>
 
         <div class="left-adv-wrap">
-            <h1 class="left-adv-header">Everyone Starts Somewhere</h1>
+            <div class="left-adv-header-wrap" (click)="scroll()">
+                <h1 class="left-adv-header">See Plans</h1>
+            </div>
 
-            <div class="left-adv-ul">
+            <!-- <div class="left-adv-ul">
                 <li class="left-adv-li">
                     <div class="hero-icon-wrap">
                         <fa-icon class="hero-icon" [icon]="wallet"></fa-icon>
@@ -39,7 +41,7 @@
                     </div>
                     <span class="left-adv-span">Get Certified</span>
                 </li>
-            </div>
+            </div> -->
         </div>
 
         <div class="advantages-wrap-main" #banner>
@@ -91,6 +93,7 @@
     <section>
         <app-whatweteach></app-whatweteach>
     </section>
+
     <app-plans></app-plans>
 
 </main>

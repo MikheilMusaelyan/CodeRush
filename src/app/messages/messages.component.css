@@ -18,7 +18,6 @@ main{
 span{
     display: inline-block;
     word-wrap: break-word;
-    word-break: break-all;
 }
 .message-wrap-right{
     display: flex;
@@ -79,15 +78,18 @@ form{
     padding: 15px;
     box-shadow: 0 0 10px rgb(229, 229, 229);
 }
+.inputholder{
+    box-shadow: 0 0.5px 6px #dddbdb;
+    border-radius: 15px;
+}
 input{
     width: 100%;
     border: none;
     outline: none;
     padding: 10px 12px 12px 12px;
-    border-radius: 15px;
-    box-shadow: 0 0.5px 6px #dddbdb;
     font-weight: bold;
     color: var(--blue);
+    border-radius: 15px;
 }
 
 /* WebKit-based browsers (Chrome, Safari) */

@@ -116,14 +116,38 @@ main{
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px );
 }
+.left-adv-header-wrap{
+    width: max-content;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    position: relative;
+    cursor: pointer;
+}
+
+.left-adv-header-wrap::before{
+    width: calc(100% - 18px);
+    content: "";
+    height: 2px;
+    position: absolute;
+    bottom: 0px;
+    background: linear-gradient(to left, var(--blue), var(--pink), var(--orange));
+}
 .left-adv-header{
-    padding-bottom: 35px;
     font-size: 35px;
+    background: linear-gradient(to left, var(--blue), var(--pink), var(--orange));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 0;
+}
+.left-adv-header:hover{
     background: linear-gradient(to right, var(--blue), var(--pink), var(--orange));
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
 .left-adv-span{
     font-size: 23px;
     color: white;

@@ -35,23 +35,53 @@ main{
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-}   
+}
+
 .plan-wrap{
     display: flex;
     justify-content: center;
 }
+.top-info-wrap{
+    background-size: cover;
+    padding: 20px 15px 40px 15px;
+    position: relative;
+    min-height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.top-info-wrap:first-child{
+    background-position: 25% center;
+}
+
+
+.top-info{
+    z-index: 2;
+    position: relative;
+}
+
+.top-info-before{
+    z-index: 1;
+    content: "";
+    left: 0;
+    top: 0;
+    border-radius: 5px 5px 0 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+}
 .plan{
     overflow: hidden;
-    min-width: 200px;
-    max-width: 33vw;
+    min-width: 20px;
+    max-width: 36vw;
     position: relative;
     display: flex;
     flex-direction: column;
     border-radius: 5px;
     /* border: 4px solid #fff0e5; */
     box-shadow: 0 0px 10px rgb(226, 225, 225);
-    padding: 15px;
     margin: 10px;
     /* background-color: #fbffe5; */
     width: max-content;
@@ -59,7 +89,7 @@ main{
 }
 .stamp-wrap{
     transition: 300ms;
-
+    padding: 15px;
 }
 .noheight{
     max-height: 0 !important;
@@ -67,10 +97,12 @@ main{
 .maxc{
     height: max-content !important;
 }
+
 .course-price{
-    color: #3d3d3d;
+    color: white;
     text-align: center;
-    margin: 10px 0;
+    text-shadow: 0 0 10px #3d3d3d;
+    margin: 10px 0 0 0;
 }
 .linethrough{
     padding-right: 10px;
@@ -79,7 +111,7 @@ main{
 .interact-wrap{
     display: flex;
     justify-content: center;
-    padding: 15px 0 23px 0;
+    padding: 20px 0 0 0;
 }
 .interact{
     cursor: pointer;
@@ -96,7 +128,7 @@ main{
 }
 
 .title{
-    margin: 15px 0 6px -10px;
+    margin: 15px 0 17px 0px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -104,9 +136,10 @@ main{
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: 30px;
+    font-size: 33px;
     font-weight: bold;
     text-align: center;
+    line-height: 35px;
 }
 .week-count{
     font-size: 21px;
@@ -193,6 +226,7 @@ main{
     position: absolute;
     left: 0;
     top: 0;
+    z-index: 2;
     display: block;
     background-color: rgb(255, 53, 53);
     color:white;
@@ -234,7 +268,7 @@ main{
 }
 
 .continue.red{
-    color: red;
+    color: rgb(255, 77, 0);
     padding: 0 0 10px 0 !important;
 }
 
@@ -269,6 +303,11 @@ main{
         margin-top: 15px;
     }
 }
+@media screen and (max-width: 800px){
+    .top-info-wrap:first-child{
+        background-position: 35% center;
+    }
+}
 @media screen and (max-width: 700px){
     .title{
         margin-top: 30px;
@@ -290,6 +329,9 @@ main{
     }
 }
 @media screen and (max-width: 600px){
+    .top-info-wrap:first-child{
+        background-position: center;
+    }
     main{
         padding: 0;
         margin: 40px 20px 40px 40px;
@@ -314,7 +356,7 @@ main{
         width: 100%;
     }
     .title{
-        font-size: 25px;
+        font-size: 30px;
         display: flex;
         justify-content: center;
     }

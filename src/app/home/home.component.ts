@@ -1,7 +1,8 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
-import { faWallet, faRocket, faPeopleGroup, faCheckDouble, faCertificate, faCheck, faEdit } from '@fortawesome/free-solid-svg-icons';
+import { faWallet, faRocket, faPeopleGroup, faCheckDouble, faCertificate, faCheck, faEdit,  } from '@fortawesome/free-solid-svg-icons';
 import { MainserviceService } from '../mainservice.service';
+import { faSun } from '@fortawesome/free-regular-svg-icons';
 
 @Component({
   selector: 'app-home',
@@ -62,6 +63,7 @@ export class HomeComponent implements OnInit, AfterViewInit{
   certification = faCertificate;
   req = faEdit
   check = faCheck;
+  sunIcon = faSun
   @ViewChild('second', {static: false}) second: any;
 
   constructor(private service: MainserviceService){}

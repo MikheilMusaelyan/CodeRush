@@ -120,7 +120,7 @@ a{
     user-select: none;
     font-weight: bold;
     color: var(--pink);
-    text-shadow: 0 0 3px rgb(255 197 209);
+    text-shadow: 0 0 5px rgb(255 197 209);
 }
 .close-icon{
     color: var(--pink);

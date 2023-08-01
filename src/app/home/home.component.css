@@ -107,6 +107,7 @@ main{
     width: 35%;
     border-radius: 7px;
     position: absolute;
+    padding: 20px;
     left: 8%;
     top: 24%;
     z-index: 11;
@@ -118,18 +119,19 @@ main{
 
 .left-adv-header-wrap{
     width: max-content;
-    padding: 20px;
+    padding: 5px 10px;
+    margin-bottom: 20px;
     border-radius: 5px;
     position: relative;
     cursor: pointer;
 }
 
 .left-adv-header-wrap::before{
-    width: calc(100% - 39px);
+    width: calc(100% - 20px);
     content: "";
-    height: 1px;
+    height: 2px;
     position: absolute;
-    bottom: 20px;
+    bottom: 0;
     background: linear-gradient(to left, var(--blue), var(--pink), var(--orange));
 }
 .left-adv-header{

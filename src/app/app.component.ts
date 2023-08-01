@@ -79,7 +79,7 @@ export class AppComponent {
       this.joined = false
       setTimeout(() => {
         this.joined = true
-      }, 3000);
+      }, 5000);
     }
     if(event){
       event.stopPropagation()

@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 main{
-    height: calc(70vh - 65px);
+    height: calc(50vh - 65px);
     overflow: hidden;
 }
 .messages{

@@ -27,8 +27,8 @@ export class MessagesComponent {
 
   ngAfterViewInit(){
     setTimeout(() => {
-      this.service.gotMessage.next('Hey there, I\'m Lisa. \nHow can I help you?')
-    }, 4000);
+      this.service.gotMessage.next('Hey there, I\'m Lisa. \nWhat can I help you with? :)')
+    }, 7000);
   }
 
   @ViewChild('messageScroll', {static: false}) messageScroll: any

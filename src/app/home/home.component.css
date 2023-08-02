@@ -80,6 +80,7 @@ main{
 }
 .hero-header{
     font-size: 67px;
+    
 }
 .hero-header span{
     background: linear-gradient(to bottom, var(--blue), var(--pink), var(--orange));
@@ -87,7 +88,10 @@ main{
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     display: block;
+    width: max-content;
+    position: relative;
 }
+
 .advantages-wrap-main{
     position: absolute;
     right: 8%;
@@ -104,7 +108,7 @@ main{
 }
 
 .left-adv-wrap{
-    width: 35%;
+    min-width: 35%;
     border-radius: 7px;
     position: absolute;
     padding: 20px;
@@ -119,7 +123,6 @@ main{
 
 .left-adv-header-wrap{
     width: max-content;
-    padding: 5px 10px;
     margin-bottom: 20px;
     border-radius: 5px;
     position: relative;
@@ -127,7 +130,7 @@ main{
 }
 
 .left-adv-header-wrap::before{
-    width: calc(100% - 20px);
+    width: 100%;
     content: "";
     height: 2px;
     position: absolute;
@@ -188,10 +191,14 @@ main{
 
 /* left hero side */
 
-/* .left-ss{
-    padding: 10px;
+.left-ss{
+    border: 1px solid;
+    padding: 15px;
+    box-shadow: -3px 2px 10px rgb(0, 0, 0);
+    border: 1px solid rgb(148, 146, 146);
     border-radius: 4px;
 }
+
 .ss-header-wrap{
     display: flex;
     align-items: center;
@@ -199,48 +206,73 @@ main{
 }
 .ss-header{
     margin: 0;
-    font-size: 20px;
-    padding-left: 10px;
+    font-size: 22px;
+    color: var(--orange);
+    font-family: 'Comic Neue', cursive;
 }
-.ss-header,.ss-span{
-    color: white;
-}
+
 .ss-span{
     display: block;
-    padding-left: 10px;
+    padding-left: 2px;
+    font-weight: bold;
+    font-family: 'Comic Neue', cursive;
+
+}
+
+.ss-adv-main-wrap{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
 }
 .ss-adv-wrap{
     display: flex;
     align-items: center;
-    padding: 4px 0;
+    padding: 4px 17px 4px 0;
 }
+
 .ss-fa-icon{
     width: 25px;
     display: flex;
     justify-content: center;
 }
-.ss-fasun{
-    color: var(--orange);
-    font-size: 20px;
-}
+
 .ss-faperson{
+    justify-content: flex-start;
     color: var(--pink);
+    width: 16px;
 }
 .ss-fasale{
     color: var(--blue);
 }
-.left-line{
-    width: 3px;
-    height: 50px;
-    margin-left: 11px;
-    border-radius: 5px;
+.ss-faopen{
+    font-size: 10px;
+    color: #4CAF50;
+    width: 20px;
 }
-.first-line{
-    background: linear-gradient(to bottom, var(--orange), var(--pink));
+.left-span-desc{
+    width: 80%;
+    max-width: 400px;
+    display: block;
+    padding: 15px 0;
+    font-size: 15px;
+    color: rgb(255, 255, 255);
+    /* font-weight: bold; */
+    font-family: 'Comic Neue', cursive;
+
 }
-.second-line{
-    background: linear-gradient(to bottom, var(--pink), var(--blue));
-} */
+.apply{
+    margin-top: 22px;
+    padding: 8px 30px;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: rgb(236, 236, 236);
+    font-family: 'Comic Neue', cursive;
+}
 
 .hero-icon-wrap{
     border-radius: 50%;
@@ -366,7 +398,7 @@ main{
 
 @media screen and (max-width: 1000px){
     .left-adv-wrap{
-        width: 50%;
+        min-width: 50%;
     }
     .advantages-wrap-main{
         right: 5%;
@@ -412,7 +444,7 @@ main{
 
 @media screen and (max-width: 780px){
     .left-adv-wrap{
-        width: 45%;
+        min-width: 45%;
         left: 15px;
         padding: 12px;
         top: 30%;
@@ -458,7 +490,7 @@ main{
         justify-content: center;
     }
     .left-adv-wrap{
-        width: 80%;
+        min-width: 80%;
         top: 45%;
         z-index: 100;
         left: 50%;
@@ -495,7 +527,7 @@ main{
 
 @media screen and (max-width: 500px){
     .left-adv-wrap{
-        width: calc(100% - 30px);
+        min-width: calc(100% - 30px);
     }
     .hero-header{
         font-size: 40px;
@@ -503,8 +535,21 @@ main{
     .advantages-wrap-main{
         right: 0;
     }
+    .left-span-wrap{
+        display: none;
+    }
+    .ss-header{
+        padding-bottom: 8px;
+    }
+    .ss-faperson{
+        width: 25px;
+        justify-content: center;
+    }
 }
 @media screen and (max-width: 415px){
+    .left-adv-wrap{
+        top: 40%;
+    }
     .anim-word{
         font-size: 45px;
     }

@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
-import { faWallet, faRocket, faPeopleGroup, faCheckDouble, faCertificate, faCheck, faEdit, faPerson, faTag,  } from '@fortawesome/free-solid-svg-icons';
+import { faWallet, faRocket, faPeopleGroup, faCheckDouble, faCertificate, faCheck, faEdit, faPerson, faTag, faTimeline, faHourglass1, faHourglass2, faCircle,  } from '@fortawesome/free-solid-svg-icons';
 import { MainserviceService } from '../mainservice.service';
 import { faSun } from '@fortawesome/free-regular-svg-icons';
 
@@ -65,12 +65,16 @@ export class HomeComponent implements OnInit, AfterViewInit{
   check = faCheck;
   sunIcon = faSun;
   person = faPerson;
-  sale = faTag
+  sale = faHourglass2;
+  open = faCircle
   @ViewChild('second', {static: false}) second: any;
 
   constructor(private service: MainserviceService){}
 
   ngOnInit(): void {
+  }
+  applyNow(){
+    this.service.contact(true)
   }
 
   scroll(){
